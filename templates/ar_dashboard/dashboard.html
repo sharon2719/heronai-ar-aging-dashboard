@@ -1,0 +1,428 @@
+{% extends 'base.html' %}
+
+{% block title %}AR Dashboard - Home{% endblock %}
+{% block breadcrumb %}Home{% endblock %}
+
+{% block content %}
+<style>
+    .page-header {
+        margin-bottom: 40px;
+    }
+
+    .page-header h1 {
+        font-size: 32px;
+        font-weight: 700;
+        color: var(--text-primary);
+        margin-bottom: 8px;
+    }
+
+    .page-header p {
+        font-size: 16px;
+        color: var(--text-secondary);
+    }
+
+    .quick-start-section {
+        margin-bottom: 40px;
+    }
+
+    .quick-start-label {
+        font-size: 12px;
+        font-weight: 600;
+        color: var(--text-muted);
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        margin-bottom: 16px;
+        display: block;
+    }
+
+    .dashboard-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 24px;
+        margin-bottom: 40px;
+    }
+
+    .dashboard-card {
+        background: var(--bg-secondary);
+        border: 1px solid var(--border-color);
+        border-radius: 12px;
+        padding: 0;
+        overflow: hidden;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        text-decoration: none;
+        display: block;
+    }
+
+    .dashboard-card:hover {
+        transform: translateY(-4px);
+        box-shadow: var(--shadow-lg);
+        border-color: var(--primary-purple);
+    }
+
+    .dashboard-card-preview {
+        height: 180px;
+        background: linear-gradient(135deg, #F9FAFB 0%, #F3F4F6 100%);
+        padding: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .dashboard-card-preview::before {
+        content: '';
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: radial-gradient(circle, rgba(99, 102, 241, 0.1) 0%, transparent 70%);
+    }
+
+    .preview-chart {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        z-index: 1;
+    }
+
+    .dashboard-card-content {
+        padding: 20px;
+    }
+
+    .dashboard-card-icon {
+        width: 40px;
+        height: 40px;
+        background: rgba(99, 102, 241, 0.1);
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 12px;
+    }
+
+    .dashboard-card-icon svg {
+        width: 20px;
+        height: 20px;
+        color: var(--primary-purple);
+    }
+
+    .dashboard-card h3 {
+        font-size: 18px;
+        font-weight: 600;
+        color: var(--text-primary);
+        margin-bottom: 8px;
+    }
+
+    .dashboard-card p {
+        font-size: 14px;
+        color: var(--text-secondary);
+        line-height: 1.6;
+        margin-bottom: 16px;
+    }
+
+    .dashboard-card-footer {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        color: var(--primary-purple);
+        font-size: 14px;
+        font-weight: 600;
+    }
+
+    .dashboard-card:hover .dashboard-card-footer svg {
+        transform: translateX(4px);
+    }
+
+    .dashboard-card-footer svg {
+        width: 16px;
+        height: 16px;
+        transition: transform 0.3s ease;
+    }
+
+    .features-card {
+        background: var(--bg-secondary);
+        border: 1px solid var(--border-color);
+        border-radius: 12px;
+        padding: 32px;
+    }
+
+    .features-card h3 {
+        font-size: 18px;
+        font-weight: 600;
+        color: var(--text-primary);
+        margin-bottom: 24px;
+    }
+
+    .features-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 24px;
+    }
+
+    .feature-item {
+        display: flex;
+        gap: 12px;
+    }
+
+    .feature-icon {
+        width: 36px;
+        height: 36px;
+        background: rgba(99, 102, 241, 0.1);
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+    }
+
+    .feature-icon svg {
+        width: 18px;
+        height: 18px;
+        color: var(--primary-purple);
+    }
+
+    .feature-content h4 {
+        font-size: 14px;
+        font-weight: 600;
+        color: var(--text-primary);
+        margin-bottom: 4px;
+    }
+
+    .feature-content p {
+        font-size: 13px;
+        color: var(--text-secondary);
+        line-height: 1.5;
+    }
+
+    /* Mini chart previews */
+    .mini-bars {
+        display: flex;
+        align-items: flex-end;
+        gap: 4px;
+        height: 100px;
+        justify-content: center;
+    }
+
+    .mini-bar {
+        width: 12px;
+        background: var(--primary-purple);
+        border-radius: 2px;
+        opacity: 0.8;
+    }
+
+    .mini-pie {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        background: conic-gradient(
+            var(--primary-purple) 0deg 120deg,
+            var(--primary-purple-light) 120deg 240deg,
+            rgba(99, 102, 241, 0.3) 240deg 360deg
+        );
+    }
+</style>
+
+<div class="page-header">
+    <h1>Heron AI workspace</h1>
+    <p>Get started with comprehensive AR aging analysis</p>
+</div>
+
+<div class="quick-start-section">
+    <span class="quick-start-label">🌟 Suggested</span>
+    
+    <div class="dashboard-grid">
+        <a href="{% url 'ar_dashboard:table_view' %}" class="dashboard-card">
+            <div class="dashboard-card-preview">
+                <div class="mini-bars">
+                    <div class="mini-bar" style="height: 60%;"></div>
+                    <div class="mini-bar" style="height: 80%;"></div>
+                    <div class="mini-bar" style="height: 45%;"></div>
+                    <div class="mini-bar" style="height: 90%;"></div>
+                    <div class="mini-bar" style="height: 70%;"></div>
+                    <div class="mini-bar" style="height: 55%;"></div>
+                    <div class="mini-bar" style="height: 85%;"></div>
+                </div>
+            </div>
+            <div class="dashboard-card-content">
+                <div class="dashboard-card-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="3" y="3" width="18" height="18" rx="2"/>
+                        <path d="M3 9h18M9 21V9"/>
+                    </svg>
+                </div>
+                <h3>AR Aging Report</h3>
+                <p>Industry-standard aging report with customer breakdown by time buckets. Perfect for compliance and stakeholder reporting.</p>
+                <div class="dashboard-card-footer">
+                    View Report
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                </div>
+            </div>
+        </a>
+
+        <a href="{% url 'ar_dashboard:widget_dashboard' %}" class="dashboard-card">
+            <div class="dashboard-card-preview">
+                <div class="mini-pie"></div>
+            </div>
+            <div class="dashboard-card-content">
+                <div class="dashboard-card-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="3" y="3" width="7" height="7"/>
+                        <rect x="14" y="3" width="7" height="7"/>
+                        <rect x="14" y="14" width="7" height="7"/>
+                        <rect x="3" y="14" width="7" height="7"/>
+                    </svg>
+                </div>
+                <h3>Interactive Dashboard</h3>
+                <p>Real-time visualizations with customizable widgets. Build your own dashboard with dynamic controls and live data updates.</p>
+                <div class="dashboard-card-footer">
+                    Open Dashboard
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                </div>
+            </div>
+        </a>
+
+        <div class="dashboard-card" style="cursor: default; opacity: 0.7;">
+            <div class="dashboard-card-preview">
+                <div class="mini-bars">
+                    <div class="mini-bar" style="height: 40%; background: var(--warning);"></div>
+                    <div class="mini-bar" style="height: 65%; background: var(--warning);"></div>
+                    <div class="mini-bar" style="height: 30%; background: var(--danger);"></div>
+                    <div class="mini-bar" style="height: 75%; background: var(--success);"></div>
+                    <div class="mini-bar" style="height: 50%; background: var(--warning);"></div>
+                </div>
+            </div>
+            <div class="dashboard-card-content">
+                <div class="dashboard-card-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                    </svg>
+                </div>
+                <h3>Collections Dashboard</h3>
+                <p>Track collection efforts, follow-up tasks, and customer payment patterns. Coming soon.</p>
+                <div class="dashboard-card-footer" style="color: var(--text-muted);">
+                    Coming Soon
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="features-card">
+    <h3>Key Features</h3>
+    <div class="features-grid">
+        <div class="feature-item">
+            <div class="feature-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+                </svg>
+            </div>
+            <div class="feature-content">
+                <h4>Real-time Data</h4>
+                <p>Automatic QuickBooks sync via Unified.to API with Dagster ETL pipeline</p>
+            </div>
+        </div>
+
+        <div class="feature-item">
+            <div class="feature-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="2" y="7" width="20" height="14" rx="2"/>
+                    <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
+                </svg>
+            </div>
+            <div class="feature-content">
+                <h4>Aging Buckets</h4>
+                <p>Current, 1-30, 31-60, 61-90, 91-120, 120+ days analysis with drill-down</p>
+            </div>
+        </div>
+
+        <div class="feature-item">
+            <div class="feature-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                    <circle cx="9" cy="7" r="4"/>
+                    <path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/>
+                </svg>
+            </div>
+            <div class="feature-content">
+                <h4>Customer Insights</h4>
+                <p>Detailed breakdown by customer with payment history and risk scoring</p>
+            </div>
+        </div>
+
+        <div class="feature-item">
+            <div class="feature-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+                </svg>
+            </div>
+            <div class="feature-content">
+                <h4>KPI Tracking</h4>
+                <p>Monitor total AR, overdue %, at-risk customers, and collection metrics</p>
+            </div>
+        </div>
+
+        <div class="feature-item">
+            <div class="feature-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="12" y1="20" x2="12" y2="10"/>
+                    <line x1="18" y1="20" x2="18" y2="4"/>
+                    <line x1="6" y1="20" x2="6" y2="16"/>
+                </svg>
+            </div>
+            <div class="feature-content">
+                <h4>Interactive Charts</h4>
+                <p>Beautiful visualizations powered by ECharts with hover effects and filters</p>
+            </div>
+        </div>
+
+        <div class="feature-item">
+            <div class="feature-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="3" y="3" width="7" height="7"/>
+                    <rect x="14" y="3" width="7" height="7"/>
+                    <rect x="14" y="14" width="7" height="7"/>
+                    <rect x="3" y="14" width="7" height="7"/>
+                </svg>
+            </div>
+            <div class="feature-content">
+                <h4>Customizable Widgets</h4>
+                <p>Build your own dashboard with drag-and-drop widgets and saved layouts</p>
+            </div>
+        </div>
+
+        <div class="feature-item">
+            <div class="feature-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                    <polyline points="7 10 12 15 17 10"/>
+                    <line x1="12" y1="15" x2="12" y2="3"/>
+                </svg>
+            </div>
+            <div class="feature-content">
+                <h4>Export & Print</h4>
+                <p>Download reports in multiple formats and print-optimized layouts</p>
+            </div>
+        </div>
+
+        <div class="feature-item">
+            <div class="feature-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"/>
+                    <polyline points="12 6 12 12 16 14"/>
+                </svg>
+            </div>
+            <div class="feature-content">
+                <h4>Automated Updates</h4>
+                <p>Scheduled data refresh every 4 hours with full ETL daily at 6 AM</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

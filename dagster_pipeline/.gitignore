@@ -1,0 +1,37 @@
+# Environment variables
+.env
+.env.*
+
+# Python virtual environment
+venv/
+*.pyc
+__pycache__/
+
+# Dagster local data & logs
+dagster_home/storage/
+dagster_home/logs/
+dagster_home/.dagster/
+dagster_home/.local/
+dagster_home/tmp/
+
+# Docker
+*.pid
+*.log
+docker-compose.override.yml
+*.bak
+*~ 
+
+# OS and IDE files
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+
+# Build artifacts
+build/
+dist/
+*.egg-info/
+
+# Temporary data or notebooks
+*.ipynb_checkpoints

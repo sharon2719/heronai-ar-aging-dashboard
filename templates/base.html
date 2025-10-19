@@ -1,0 +1,985 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}AR Dashboard{% endblock %}</title>
+    <script src="https://unpkg.com/htmx.org@1.9.10"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.4.3/echarts.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-purple: #6366F1;
+            --primary-purple-dark: #4F46E5;
+            --primary-purple-light: #818CF8;
+            --bg-primary: #F9FAFB;
+            --bg-secondary: #FFFFFF;
+            --text-primary: #111827;
+            --text-secondary: #6B7280;
+            --text-muted: #9CA3AF;
+            --border-color: #E5E7EB;
+            --border-light: #F3F4F6;
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            --success: #10B981;
+            --warning: #F59E0B;
+            --danger: #EF4444;
+        }
+
+        html.dark-mode {
+            --bg-primary: #0F172A;
+            --bg-secondary: #1E293B;
+            --text-primary: #F1F5F9;
+            --text-secondary: #CBD5E1;
+            --text-muted: #94A3B8;
+            --border-color: #334155;
+            --border-light: #1E293B;
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.5);
+        }
+
+        html, body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Inter', sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.5;
+            height: 100%;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Sidebar Navigation */
+        .app-layout {
+            display: flex;
+            min-height: 100vh;
+        }
+
+        .sidebar {
+            width: 260px;
+            background: linear-gradient(180deg, var(--bg-secondary) 0%, var(--bg-primary) 100%);
+            border-right: 1px solid var(--border-color);
+            padding: 24px 0;
+            display: flex;
+            flex-direction: column;
+            position: sticky;
+            top: 0;
+            height: 100vh;
+            overflow-y: auto;
+            transition: background-color 0.3s ease;
+        }
+
+        .sidebar-brand {
+            padding: 0 20px 24px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 700;
+            font-size: 20px;
+            color: var(--text-primary);
+            border-bottom: 1px solid var(--border-light);
+            margin-bottom: 24px;
+        }
+
+        .sidebar-brand svg {
+            width: 28px;
+            height: 28px;
+            color: var(--primary-purple);
+        }
+
+        .sidebar-brand-text {
+            background: linear-gradient(135deg, var(--primary-purple) 0%, var(--primary-purple-light) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .sidebar-section {
+            padding: 0 12px;
+            margin-bottom: 24px;
+        }
+
+        .sidebar-section-title {
+            font-size: 11px;
+            font-weight: 700;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            padding: 0 12px 12px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .sidebar-nav {
+            list-style: none;
+        }
+
+        .sidebar-nav li {
+            margin-bottom: 4px;
+        }
+
+        .sidebar-nav li a {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 14px;
+            color: var(--text-secondary);
+            text-decoration: none;
+            border-radius: 10px;
+            font-size: 14px;
+            font-weight: 500;
+            transition: all 0.2s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .sidebar-nav li a::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 3px;
+            background: var(--primary-purple);
+            transform: scaleY(0);
+            transition: transform 0.2s ease;
+        }
+
+        .sidebar-nav li a:hover {
+            background: rgba(99, 102, 241, 0.08);
+            color: var(--primary-purple);
+            transform: translateX(2px);
+        }
+
+        .sidebar-nav li a.active {
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.12) 0%, rgba(99, 102, 241, 0.06) 100%);
+            color: var(--primary-purple);
+            font-weight: 600;
+            box-shadow: inset 0 0 0 1px rgba(99, 102, 241, 0.2);
+        }
+
+        .sidebar-nav li a.active::before {
+            transform: scaleY(1);
+        }
+
+        .sidebar-nav li a svg {
+            width: 20px;
+            height: 20px;
+            flex-shrink: 0;
+        }
+
+        .sidebar-badge {
+            margin-left: auto;
+            background: var(--primary-purple);
+            color: white;
+            font-size: 10px;
+            font-weight: 700;
+            padding: 2px 8px;
+            border-radius: 12px;
+            letter-spacing: 0.3px;
+        }
+
+        .sidebar-badge.new {
+            background: linear-gradient(135deg, #10B981 0%, #059669 100%);
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.05); opacity: 0.9; }
+        }
+
+        /* Main Content */
+        .main-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            overflow-x: hidden;
+        }
+
+        /* Top Navigation Bar */
+        .topbar {
+            background: var(--bg-secondary);
+            border-bottom: 1px solid var(--border-color);
+            padding: 16px 32px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.9);
+            transition: background-color 0.3s ease;
+        }
+
+        html.dark-mode .topbar {
+            background: rgba(30, 41, 59, 0.9);
+        }
+
+        .topbar-left {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .topbar-title {
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .topbar-breadcrumb {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 14px;
+            color: var(--text-secondary);
+        }
+
+        .topbar-breadcrumb span:last-child {
+            color: var(--primary-purple);
+            font-weight: 600;
+        }
+
+        .topbar-right {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .status-indicator {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 14px;
+            background: rgba(16, 185, 129, 0.1);
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--success);
+        }
+
+        .status-indicator::before {
+            content: '';
+            width: 8px;
+            height: 8px;
+            background: var(--success);
+            border-radius: 50%;
+            animation: blink 2s ease-in-out infinite;
+        }
+
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.3; }
+        }
+
+        /* Container */
+        .container {
+            max-width: 1600px;
+            margin: 0 auto;
+            padding: 32px;
+            width: 100%;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 10px 20px;
+            border-radius: 8px;
+            border: none;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 14px;
+            transition: all 0.2s ease;
+            text-decoration: none;
+            white-space: nowrap;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary-purple) 0%, var(--primary-purple-dark) 100%);
+            color: white;
+            box-shadow: 0 2px 8px rgba(99, 102, 241, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(99, 102, 241, 0.4);
+        }
+
+        .btn-secondary {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            color: var(--text-primary);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--primary-purple);
+            color: var(--primary-purple);
+            background: rgba(99, 102, 241, 0.05);
+        }
+
+        .btn-ghost {
+            background: transparent;
+            color: var(--text-secondary);
+            padding: 8px 12px;
+            border-radius: 8px;
+        }
+
+        .btn-ghost:hover {
+            background: var(--bg-primary);
+            color: var(--primary-purple);
+        }
+
+        /* User Avatar */
+        .user-avatar {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary-purple) 0%, var(--primary-purple-light) 100%);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 14px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            box-shadow: 0 2px 8px rgba(99, 102, 241, 0.3);
+        }
+
+        .user-avatar:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 12px rgba(99, 102, 241, 0.4);
+        }
+
+        /* Loading Spinner */
+        .spinner {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 2px solid var(--border-light);
+            border-top: 2px solid var(--primary-purple);
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Quick Stats Bar */
+        .quick-stats {
+            display: flex;
+            gap: 16px;
+            padding: 12px 16px;
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.05) 0%, rgba(99, 102, 241, 0.02) 100%);
+            border-radius: 10px;
+            margin-bottom: 24px;
+        }
+
+        .quick-stat-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 13px;
+            color: var(--text-secondary);
+        }
+
+        .quick-stat-value {
+            font-weight: 700;
+            color: var(--primary-purple);
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            align-items: center;
+            justify-content: center;
+            backdrop-filter: blur(4px);
+        }
+
+        .modal.active {
+            display: flex;
+        }
+
+        .modal-content {
+            background: var(--bg-secondary);
+            padding: 0;
+            border-radius: 12px;
+            max-width: 500px;
+            width: 90%;
+            box-shadow: var(--shadow-lg);
+            animation: modalSlideIn 0.3s ease;
+        }
+
+        @keyframes modalSlideIn {
+            from {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 24px 24px;
+            border-bottom: 1px solid var(--border-light);
+        }
+
+        .modal-header h2 {
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin: 0;
+        }
+
+        .modal-close {
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: var(--text-muted);
+            padding: 4px;
+            border-radius: 4px;
+            transition: all 0.2s ease;
+            width: 32px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-close:hover {
+            background: var(--bg-primary);
+            color: var(--text-primary);
+        }
+
+        .modal-body {
+            padding: 24px;
+        }
+
+        /* Preferences Styles */
+        .preference-section {
+            margin-bottom: 24px;
+        }
+
+        .preference-section:last-child {
+            margin-bottom: 0;
+        }
+
+        .preference-section-title {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--text-muted);
+        }
+
+        .preference-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px;
+            background: var(--bg-primary);
+            border-radius: 8px;
+            margin-bottom: 8px;
+        }
+
+        .preference-item-label {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .preference-item-title {
+            font-weight: 600;
+            color: var(--text-primary);
+            font-size: 14px;
+        }
+
+        .preference-item-description {
+            font-size: 12px;
+            color: var(--text-secondary);
+        }
+
+        /* Toggle Switch */
+        .toggle-switch {
+            position: relative;
+            display: inline-block;
+            width: 50px;
+            height: 28px;
+        }
+
+        .toggle-switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .toggle-slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: var(--border-color);
+            transition: 0.3s;
+            border-radius: 28px;
+        }
+
+        .toggle-slider:before {
+            position: absolute;
+            content: "";
+            height: 22px;
+            width: 22px;
+            left: 3px;
+            bottom: 3px;
+            background-color: white;
+            transition: 0.3s;
+            border-radius: 50%;
+        }
+
+        input:checked + .toggle-slider {
+            background-color: var(--primary-purple);
+        }
+
+        input:checked + .toggle-slider:before {
+            transform: translateX(22px);
+        }
+
+        /* Radio Group */
+        .radio-group {
+            display: flex;
+            gap: 8px;
+        }
+
+        .radio-option {
+            flex: 1;
+            position: relative;
+        }
+
+        .radio-option input[type="radio"] {
+            display: none;
+        }
+
+        .radio-option label {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px;
+            border: 2px solid var(--border-color);
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-weight: 500;
+            font-size: 13px;
+        }
+
+        .radio-option input[type="radio"]:checked + label {
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.1) 0%, rgba(99, 102, 241, 0.05) 100%);
+            border-color: var(--primary-purple);
+            color: var(--primary-purple);
+        }
+
+        @media (max-width: 1200px) {
+            .sidebar {
+                width: 220px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .sidebar {
+                display: none;
+            }
+            .container {
+                padding: 20px;
+            }
+            .topbar {
+                padding: 12px 20px;
+            }
+            .status-indicator {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="app-layout">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-brand">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                </svg>
+                <span class="sidebar-brand-text">Heron AI</span>
+            </div>
+            
+            <div class="sidebar-section">
+                <div class="sidebar-section-title">
+                    📊 Main Menu
+                </div>
+                <ul class="sidebar-nav">
+                    <li>
+                        <a href="{% url 'ar_dashboard:home' %}" class="{% if request.resolver_match.url_name == 'home' %}active{% endif %}">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                                <polyline points="9 22 9 12 15 12 15 22"/>
+                            </svg>
+                            Home
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{% url 'ar_dashboard:widget_dashboard' %}" class="{% if request.resolver_match.url_name == 'widget_dashboard' %}active{% endif %}">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="3" y="3" width="7" height="7" rx="1"/>
+                                <rect x="14" y="3" width="7" height="7" rx="1"/>
+                                <rect x="14" y="14" width="7" height="7" rx="1"/>
+                                <rect x="3" y="14" width="7" height="7" rx="1"/>
+                            </svg>
+                            Interactive Dashboard
+                            <span class="sidebar-badge">NEW</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{% url 'ar_dashboard:table_view' %}" class="{% if request.resolver_match.url_name == 'table_view' %}active{% endif %}">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="3" y="3" width="18" height="18" rx="2"/>
+                                <path d="M3 9h18M3 15h18M9 3v18"/>
+                            </svg>
+                            AR Aging Report
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="sidebar-section">
+                <div class="sidebar-section-title">
+                    🔍 Analytics
+                </div>
+                <ul class="sidebar-nav">
+                    <li>
+                        <a href="#">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="12" y1="20" x2="12" y2="10"/>
+                                <line x1="18" y1="20" x2="18" y2="4"/>
+                                <line x1="6" y1="20" x2="6" y2="16"/>
+                            </svg>
+                            Trends & Insights
+                            <span class="sidebar-badge new">SOON</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                                <circle cx="9" cy="7" r="4"/>
+                                <path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/>
+                            </svg>
+                            Customer Analytics
+                            <span class="sidebar-badge new">SOON</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="sidebar-section" style="margin-top: auto;">
+    <div class="sidebar-section-title">
+        ⚙️ Settings
+    </div>
+    <ul class="sidebar-nav">
+        <li>
+            <a href="{% url 'ar_dashboard:demo_mode' %}" class="{% if request.resolver_match.url_name == 'demo_mode' %}active{% endif %}">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"/>
+                    <polygon points="10 8 16 12 10 16 10 8"/>
+                </svg>
+                Demo Control
+                <span class="sidebar-badge" style="background: #F59E0B;">DEMO</span>
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+                    <polyline points="3.27 6.96 12 12.01 20.73 6.96"/>
+                    <line x1="12" y1="22.08" x2="12" y2="12"/>
+                </svg>
+                Data Connections
+            </a>
+        </li>
+        <li>
+            <a href="#" onclick="openPreferencesModal(event)">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="3"/>
+                    <path d="M12 1v6m0 6v6M5.64 5.64l4.24 4.24m4.24 4.24l4.24 4.24M1 12h6m6 0h6M5.64 18.36l4.24-4.24m4.24-4.24l4.24-4.24"/>
+                </svg>
+                Preferences
+            </a>
+        </li>
+    </ul>
+</div>
+        </aside>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Top Bar -->
+            <header class="topbar">
+                <div class="topbar-left">
+                    <div class="topbar-breadcrumb">
+                        <span>Dashboard</span>
+                        <span>/</span>
+                        <span>{% block breadcrumb %}Home{% endblock %}</span>
+                    </div>
+                </div>
+                <div class="topbar-right">
+                    <div class="status-indicator">
+                        <span>Live Data</span>
+                    </div>
+                    <button class="btn btn-ghost" title="Search">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="11" cy="11" r="8"/>
+                            <path d="m21 21-4.35-4.35"/>
+                        </svg>
+                    </button>
+                    <button class="btn btn-ghost" title="Notifications">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/>
+                            <path d="M13.73 21a2 2 0 0 1-3.46 0"/>
+                        </svg>
+                    </button>
+                    <div class="user-avatar" title="User Profile">JN</div>
+                </div>
+            </header>
+
+            <!-- Page Content -->
+            <main>
+                <div class="container">
+                    {% block content %}{% endblock %}
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!-- Preferences Modal -->
+    <div id="preferencesModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Preferences</h2>
+                <button class="modal-close" onclick="closePreferencesModal()">×</button>
+            </div>
+            <div class="modal-body">
+                <!-- Theme Section -->
+                <div class="preference-section">
+                    <div class="preference-section-title">Appearance</div>
+                    <div class="preference-item">
+                        <div class="preference-item-label">
+                            <span class="preference-item-title">Theme</span>
+                            <span class="preference-item-description">Choose your preferred color scheme</span>
+                        </div>
+                    </div>
+                    <div class="radio-group">
+                        <div class="radio-option">
+                            <input type="radio" id="theme-light" name="theme" value="light" onchange="setTheme('light')">
+                            <label for="theme-light">
+                                <svg style="width: 16px; height: 16px; margin-right: 6px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="5"/>
+                                    <line x1="12" y1="1" x2="12" y2="3"/>
+                                    <line x1="12" y1="21" x2="12" y2="23"/>
+                                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+                                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+                                    <line x1="1" y1="12" x2="3" y2="12"/>
+                                    <line x1="21" y1="12" x2="23" y2="12"/>
+                                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+                                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+                                </svg>
+                                Light
+                            </label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" id="theme-dark" name="theme" value="dark" onchange="setTheme('dark')">
+                            <label for="theme-dark">
+                                <svg style="width: 16px; height: 16px; margin-right: 6px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+                                </svg>
+                                Dark
+                            </label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" id="theme-auto" name="theme" value="auto" onchange="setTheme('auto')">
+                            <label for="theme-auto">
+                                <svg style="width: 16px; height: 16px; margin-right: 6px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M12 18c-3.3 0-6-2.7-6-6s2.7-6 6-6 6 2.7 6 6-2.7 6-6 6zM20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2z"/>
+                                </svg>
+                                Auto
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Notifications Section -->
+                <div class="preference-section">
+                    <div class="preference-section-title">Notifications</div>
+                    <div class="preference-item">
+                        <div class="preference-item-label">
+                            <span class="preference-item-title">Email Alerts</span>
+                            <span class="preference-item-description">Receive alerts for overdue invoices</span>
+                        </div>
+                        <label class="toggle-switch">
+                            <input type="checkbox" id="emailAlerts" checked onchange="savePreference('emailAlerts', this.checked)">
+                            <span class="toggle-slider"></span>
+                        </label>
+                    </div>
+                    <div class="preference-item">
+                        <div class="preference-item-label">
+                            <span class="preference-item-title">In-App Notifications</span>
+                            <span class="preference-item-description">Show notifications in the dashboard</span>
+                        </div>
+                        <label class="toggle-switch">
+                            <input type="checkbox" id="inAppNotifications" checked onchange="savePreference('inAppNotifications', this.checked)">
+                            <span class="toggle-slider"></span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Data Section -->
+                <div class="preference-section">
+                    <div class="preference-section-title">Data</div>
+                    <div class="preference-item">
+                        <div class="preference-item-label">
+                            <span class="preference-item-title">Auto Refresh</span>
+                            <span class="preference-item-description">Automatically refresh dashboard data</span>
+                        </div>
+                        <label class="toggle-switch">
+                            <input type="checkbox" id="autoRefresh" checked onchange="savePreference('autoRefresh', this.checked)">
+                            <span class="toggle-slider"></span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Theme Management
+        function initializeTheme() {
+            const savedTheme = localStorage.getItem('theme') || 'light';
+            setTheme(savedTheme);
+        }
+
+        function setTheme(theme) {
+            const html = document.documentElement;
+            
+            if (theme === 'auto') {
+                const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+                html.classList.toggle('dark-mode', prefersDark);
+                localStorage.setItem('theme', 'auto');
+            } else if (theme === 'dark') {
+                html.classList.add('dark-mode');
+                localStorage.setItem('theme', 'dark');
+            } else {
+                html.classList.remove('dark-mode');
+                localStorage.setItem('theme', 'light');
+            }
+            
+            // Update radio button
+            document.getElementById(`theme-${theme}`).checked = true;
+            
+            // Save preference
+            savePreference('theme', theme);
+        }
+
+        // Demo Mode Management
+        function toggleDemoMode(enabled) {
+            localStorage.setItem('demoMode', enabled ? 'true' : 'false');
+            if (enabled) {
+                console.log('✓ Demo mode enabled. Open /ar/demo/ in another window.');
+            } else {
+                console.log('✗ Demo mode disabled.');
+            }
+            savePreference('demoMode', enabled);
+        }
+
+        function isDemoModeActive() {
+            return localStorage.getItem('demoMode') === 'true';
+        }
+
+        function openPreferencesModal(event) {
+            if (event) event.preventDefault();
+            document.getElementById('preferencesModal').classList.add('active');
+            loadPreferences();
+        }
+
+        function closePreferencesModal() {
+            document.getElementById('preferencesModal').classList.remove('active');
+        }
+
+        function loadPreferences() {
+            const theme = localStorage.getItem('theme') || 'light';
+            const emailAlerts = localStorage.getItem('emailAlerts') !== 'false';
+            const inAppNotifications = localStorage.getItem('inAppNotifications') !== 'false';
+            const autoRefresh = localStorage.getItem('autoRefresh') !== 'false';
+            const demoMode = localStorage.getItem('demoMode') === 'true';
+
+            document.getElementById(`theme-${theme}`).checked = true;
+            document.getElementById('emailAlerts').checked = emailAlerts;
+            document.getElementById('inAppNotifications').checked = inAppNotifications;
+            document.getElementById('autoRefresh').checked = autoRefresh;
+            document.getElementById('demoMode').checked = demoMode;
+        }
+
+        function savePreference(key, value) {
+            localStorage.setItem(key, value);
+        }
+
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            const modal = document.getElementById('preferencesModal');
+            if (event.target === modal) {
+                closePreferencesModal();
+            }
+        }
+
+        // Initialize theme on page load
+        document.addEventListener('DOMContentLoaded', initializeTheme);
+
+        // Listen for system theme changes
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+            const theme = localStorage.getItem('theme');
+            if (theme === 'auto') {
+                setTheme('auto');
+            }
+        });
+    </script>

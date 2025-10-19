@@ -1,0 +1,2969 @@
+[
+  {
+    "external_id": "13668073-4670-4669-8358-53fe02d6101c",
+    "name": "Adah Johnston",
+    "primary_email": "adah.johnston22@hotmail.com",
+    "primary_phone": null,
+    "is_supplier": false,
+    "external_created_at": "2021-02-18T06:00:54.522Z",
+    "external_updated_at": "2023-11-24T12:34:23.901Z",
+    "raw_data": {
+      "id": "13668073-4670-4669-8358-53fe02d6101c",
+      "created_at": "2021-02-18T06:00:54.522Z",
+      "updated_at": "2023-11-24T12:34:23.901Z",
+      "name": "Adah Johnston",
+      "emails": [
+        {
+          "email": "adah.johnston22@hotmail.com",
+          "type": "HOME"
+        },
+        {
+          "email": "adah_johnston@hotmail.com",
+          "type": "WORK"
+        }
+      ],
+      "telephones": [
+        {
+          "telephone": "(824) 346-4658",
+          "type": "WORK"
+        }
+      ],
+      "billing_address": {
+        "address1": "3303 Kessler Harbor",
+        "address2": "Suite 918",
+        "city": "Tomasfield",
+        "region_code": "LA",
+        "postal_code": "79236",
+        "country_code": "US",
+        "country": "United States",
+        "region": "Louisiana"
+      },
+      "shipping_address": {
+        "address1": "86061 Main Road",
+        "address2": "Apt. 212",
+        "city": "Jarrodfield",
+        "region_code": "DE",
+        "postal_code": "28043",
+        "country_code": "US",
+        "country": "United States",
+        "region": "Delaware"
+      },
+      "is_active": false,
+      "tax_exemption": "EDUCATIONAL_ORG",
+      "currency": "GIP",
+      "is_customer": true,
+      "company_name": "Grant - Satterfield"
+    }
+  },
+  {
+    "external_id": "d87470e8-33ef-42c1-bf47-117fb6490553",
+    "name": "Zola Powlowski",
+    "primary_email": "zola.powlowski@gmail.com",
+    "primary_phone": null,
+    "is_supplier": false,
+    "external_created_at": "2022-06-08T17:41:10.714Z",
+    "external_updated_at": "2024-05-02T08:36:38.544Z",
+    "raw_data": {
+      "id": "d87470e8-33ef-42c1-bf47-117fb6490553",
+      "created_at": "2022-06-08T17:41:10.714Z",
+      "updated_at": "2024-05-02T08:36:38.544Z",
+      "name": "Zola Powlowski",
+      "emails": [
+        {
+          "email": "zola.powlowski@gmail.com",
+          "type": "OTHER"
+        },
+        {
+          "email": "zola.powlowski21@gmail.com",
+          "type": "WORK"
+        },
+        {
+          "email": "zola.powlowski27@yahoo.com",
+          "type": "OTHER"
+        }
+      ],
+      "telephones": [
+        {
+          "telephone": "(580) 686-0345",
+          "type": "WORK"
+        },
+        {
+          "telephone": "(820) 991-2443",
+          "type": "HOME"
+        },
+        {
+          "telephone": "(884) 955-7462",
+          "type": "MOBILE"
+        }
+      ],
+      "billing_address": {
+        "address1": "40322 Williamson Shore",
+        "address2": "Apt. 657",
+        "city": "New Abigail",
+        "region_code": "WI",
+        "postal_code": "53056-9817",
+        "country_code": "US",
+        "country": "United States",
+        "region": "Wisconsin"
+      },
+      "shipping_address": {
+        "address1": "9657 Schulist Ways",
+        "address2": "Suite 667",
+        "city": "New Emma",
+        "region_code": "OR",
+        "postal_code": "46717",
+        "country_code": "US",
+        "country": "United States",
+        "region": "Oregon"
+      },
+      "is_active": true,
+      "tax_exemption": "TRIBAL_GOV",
+      "currency": "BMD",
+      "is_customer": true,
+      "company_name": "Hodkiewicz, Steuber and Corkery"
+    }
+  },
+  {
+    "external_id": "7c3e62e7-5cb6-438c-98a0-41bc97a7e924",
+    "name": "Bettye Gerlach",
+    "primary_email": "bettye.gerlach48@gmail.com",
+    "primary_phone": null,
+    "is_supplier": false,
+    "external_created_at": "2023-04-23T15:09:30.906Z",
+    "external_updated_at": "2025-04-29T10:02:07.779Z",
+    "raw_data": {
+      "id": "7c3e62e7-5cb6-438c-98a0-41bc97a7e924",
+      "created_at": "2023-04-23T15:09:30.906Z",
+      "updated_at": "2025-04-29T10:02:07.779Z",
+      "name": "Bettye Gerlach",
+      "emails": [
+        {
+          "email": "bettye.gerlach48@gmail.com",
+          "type": "WORK"
+        }
+      ],
+      "telephones": [
+        {
+          "telephone": "(898) 547-4788",
+          "type": "OTHER"
+        },
+        {
+          "telephone": "(241) 837-5260",
+          "type": "FAX"
+        }
+      ],
+      "billing_address": {
+        "address1": "18848 Wren Close",
+        "address2": "Apt. 259",
+        "city": "Fond du Lac",
+        "region_code": "NJ",
+        "postal_code": "84753",
+        "country_code": "US",
+        "country": "United States",
+        "region": "New Jersey"
+      },
+      "shipping_address": {
+        "address1": "884 Gus Fords",
+        "city": "Silasbury",
+        "region_code": "CA",
+        "postal_code": "14694",
+        "country_code": "US",
+        "country": "United States",
+        "region": "California"
+      },
+      "is_active": true,
+      "tax_exemption": "REGION_GOV",
+      "currency": "KGS",
+      "is_customer": true,
+      "company_name": "Metz - Schmitt"
+    }
+  },
+  {
+    "external_id": "13fa05b9-5774-4660-8283-07c9f4098942",
+    "name": "Granville Davis",
+    "primary_email": "granville.davis@hotmail.com",
+    "primary_phone": null,
+    "is_supplier": false,
+    "external_created_at": "2023-12-26T06:20:43.531Z",
+    "external_updated_at": "2024-12-04T04:31:46.633Z",
+    "raw_data": {
+      "id": "13fa05b9-5774-4660-8283-07c9f4098942",
+      "created_at": "2023-12-26T06:20:43.531Z",
+      "updated_at": "2024-12-04T04:31:46.633Z",
+      "name": "Granville Davis",
+      "emails": [
+        {
+          "email": "granville.davis@hotmail.com",
+          "type": "OTHER"
+        }
+      ],
+      "telephones": [
+        {
+          "telephone": "(880) 518-8393",
+          "type": "FAX"
+        },
+        {
+          "telephone": "(705) 443-6068",
+          "type": "HOME"
+        }
+      ],
+      "billing_address": {
+        "address1": "3664 Buddy Knoll",
+        "city": "North Elenor",
+        "region_code": "NE",
+        "postal_code": "07241-4253",
+        "country_code": "US",
+        "country": "United States",
+        "region": "Nebraska"
+      },
+      "shipping_address": {
+        "address1": "54042 Gleichner Place",
+        "address2": "Apt. 362",
+        "city": "Laredo",
+        "region_code": "MN",
+        "postal_code": "66400",
+        "country_code": "US",
+        "country": "United States",
+        "region": "Minnesota"
+      },
+      "is_active": false,
+      "tax_exemption": "OTHER",
+      "currency": "KYD",
+      "is_customer": true,
+      "company_name": "Kub - Hansen"
+    }
+  },
+  {
+    "external_id": "762d8b9e-74e7-4408-a20c-ae86e1046d7c",
+    "name": "Emmy Hilpert",
+    "primary_email": "emmy_hilpert@gmail.com",
+    "primary_phone": null,
+    "is_supplier": false,
+    "external_created_at": "2025-01-23T16:04:38.374Z",
+    "external_updated_at": "2025-03-11T00:10:24.092Z",
+    "raw_data": {
+      "id": "762d8b9e-74e7-4408-a20c-ae86e1046d7c",
+      "created_at": "2025-01-23T16:04:38.374Z",
+      "updated_at": "2025-03-11T00:10:24.092Z",
+      "name": "Emmy Hilpert",
+      "emails": [
+        {
+          "email": "emmy_hilpert@gmail.com",
+          "type": "OTHER"
+        },
+        {
+          "email": "emmy.hilpert47@hotmail.com",
+          "type": "WORK"
+        }
+      ],
+      "telephones": [
+        {
+          "telephone": "(575) 542-9242",
+          "type": "MOBILE"
+        }
+      ],
+      "billing_address": {
+        "address1": "66894 Laburnum Grove",
+        "city": "Port Patriciaport",
+        "region_code": "TX",
+        "postal_code": "89177",
+        "country_code": "US",
+        "country": "United States",
+        "region": "Texas"
+      },
+      "shipping_address": {
+        "address1": "11664 Runte Roads",
+        "city": "Roxannestead",
+        "region_code": "IN",
+        "postal_code": "71443-2426",
+        "country_code": "US",
+        "country": "United States",
+        "region": "Indiana"
+      },
+      "is_active": false,
+      "tax_exemption": "MEDICAL_ORG",
+      "currency": "HKD",
+      "is_customer": true,
+      "company_name": "Beier and Sons"
+    }
+  },
+  {
+    "external_id": "d01a8a51-a871-4e02-b930-880ce86a1233",
+    "name": "Misael Anderson",
+    "primary_email": "misael_anderson@gmail.com",
+    "primary_phone": null,
+    "is_supplier": false,
+    "external_created_at": "2024-10-14T11:24:59.731Z",
+    "external_updated_at": "2025-02-08T16:52:02.583Z",
+    "raw_data": {
+      "id": "d01a8a51-a871-4e02-b930-880ce86a1233",
+      "created_at": "2024-10-14T11:24:59.731Z",
+      "updated_at": "2025-02-08T16:52:02.583Z",
+      "name": "Misael Anderson",
+      "emails": [
+        {
+          "email": "misael_anderson@gmail.com",
+          "type": "HOME"
+        }
+      ],
+      "telephones": [
+        {
+          "telephone": "(252) 961-9601",
+          "type": "OTHER"
+        }
+      ],
+      "billing_address": {
+        "address1": "15114 Jacklyn Highway",
+        "city": "Amalialand",
+        "region_code": "NE",
+        "postal_code": "77875-9110",
+        "country_code": "US",
+        "country": "United States",
+        "region": "Nebraska"
+      },
+      "shipping_address": {
+        "address1": "8396 Cordell Track",
+        "city": "North Jedediah",
+        "region_code": "PA",
+        "postal_code": "08853-6721",
+        "country_code": "US",
+        "country": "United States",
+        "region": "Pennsylvania"
+      },
+      "is_active": false,
+      "tax_exemption": "TRIBAL_GOV",
+      "currency": "BND",
+      "is_customer": true,
+      "company_name": "Barton, Grant and Parker"
+    }
+  },
+  {
+    "external_id": "5843e5c5-1d09-47af-8091-3657c7498ac8",
+    "name": "Leo Ondricka",
+    "primary_email": "leo.ondricka13@yahoo.com",
+    "primary_phone": null,
+    "is_supplier": false,
+    "external_created_at": "2021-10-09T10:58:41.880Z",
+    "external_updated_at": "2023-10-24T04:45:25.563Z",
+    "raw_data": {
+      "id": "5843e5c5-1d09-47af-8091-3657c7498ac8",
+      "created_at": "2021-10-09T10:58:41.880Z",
+      "updated_at": "2023-10-24T04:45:25.563Z",
+      "name": "Leo Ondricka",
+      "emails": [
+        {
+          "email": "leo.ondricka13@yahoo.com",
+          "type": "HOME"
+        },
+        {
+          "email": "leo_ondricka95@yahoo.com",
+          "type": "HOME"
+        },
+        {
+          "email": "leo_ondricka59@yahoo.com",
+          "type": "HOME"
+        }
+      ],
+      "telephones": [
+        {
+          "telephone": "(647) 919-4254",
+          "type": "MOBILE"
+        },
+        {
+          "telephone": "(899) 420-4819",
+          "type": "OTHER"
+        }
+      ],
+      "billing_address": {
+        "address1": "63053 Deon Vista",
+        "address2": "Apt. 370",
+        "city": "Ozellaborough",
+        "region_code": "AL",
+        "postal_code": "55304",
+        "country_code": "US",
+        "country": "United States",
+        "region": "Alabama"
+      },
+      "shipping_address": {
+        "address1": "8728 Wellington Road",
+        "city": "West Vesta",
+        "region_code": "MO",
+        "postal_code": "77870-3892",
+        "country_code": "US",
+        "country": "United States",
+        "region": "Missouri"
+      },
+      "is_active": false,
+      "tax_exemption": "OTHER",
+      "currency": "CHF",
+      "is_customer": true,
+      "company_name": "Nicolas Group"
+    }
+  },
+  {
+    "external_id": "fba04d4c-f20f-4c7b-9680-bc4d7fbfa6f0",
+    "name": "Willis Jakubowski",
+    "primary_email": "willis_jakubowski@hotmail.com",
+    "primary_phone": null,
+    "is_supplier": false,
+    "external_created_at": "2025-01-31T14:13:07.527Z",
+    "external_updated_at": "2025-07-05T13:25:16.262Z",
+    "raw_data": {
+      "id": "fba04d4c-f20f-4c7b-9680-bc4d7fbfa6f0",
+      "created_at": "2025-01-31T14:13:07.527Z",
+      "updated_at": "2025-07-05T13:25:16.262Z",
+      "name": "Willis Jakubowski",
+      "emails": [
+        {
+          "email": "willis_jakubowski@hotmail.com",
+          "type": "OTHER"
+        },
+        {
+          "email": "willis.jakubowski59@hotmail.com",
+          "type": "OTHER"
+        },
+        {
+          "email": "willis_jakubowski@gmail.com",
+          "type": "OTHER"
+        }
+      ],
+      "telephones": [
+        {
+          "telephone": "(206) 378-8959",
+          "type": "WORK"
+        },
+        {
+          "telephone": "(759) 771-1267",
+          "type": "OTHER"
+        }
+      ],
+      "billing_address": {
+        "address1": "505 Keebler Rue",
+        "address2": "Suite 375",
+        "city": "Lake Laylafurt",
+        "region_code": "SD",
+        "postal_code": "04086-3566",
+        "country_code": "US",
+        "country": "United States",
+        "region": "South Dakota"
+      },
+      "shipping_address": {
+        "address1": "747 Talbot Road",
+        "city": "Beierborough",
+        "region_code": "NV",
+        "postal_code": "25597",
+        "country_code": "US",
+        "country": "United States",
+        "region": "Nevada"
+      },
+      "is_active": true,
+      "tax_exemption": "FEDERAL_GOV",
+      "currency": "KMF",
+      "is_customer": true,
+      "company_name": "Klocko Inc"
+    }
+  },
+  {
+    "external_id": "f1d4be9e-59f7-4648-aa8a-0bcab1086138",
+    "name": "Bernardo Bins",
+    "primary_email": "bernardo.bins@hotmail.com",
+    "primary_phone": null,
+    "is_supplier": false,
+    "external_created_at": "2021-03-03T01:45:38.016Z",
+    "external_updated_at": "2022-06-14T15:02:40.634Z",
+    "raw_data": {
+      "id": "f1d4be9e-59f7-4648-aa8a-0bcab1086138",
+      "created_at": "2021-03-03T01:45:38.016Z",
+      "updated_at": "2022-06-14T15:02:40.634Z",
+      "name": "Bernardo Bins",
+      "emails": [
+        {
+          "email": "bernardo.bins@hotmail.com",
+          "type": "WORK"
+        },
+        {
+          "email": "bernardo.bins24@yahoo.com",
+          "type": "WORK"
+        }
+      ],
+      "telephones": [
+        {
+          "telephone": "(327) 903-9859",
+          "type": "FAX"
+        },
+        {
+          "telephone": "(532) 260-7798",
+          "type": "FAX"
+        },
+        {
+          "telephone": "(641) 370-3761",
+          "type": "WORK"
+        }
+      ],
+      "billing_address": {
+        "address1": "1884 Brookside",
+        "address2": "Apt. 421",
+        "city": "Jordanemouth",
+        "region_code": "CA",
+        "postal_code": "81868",
+        "country_code": "US",
+        "country": "United States",
+        "region": "California"
+      },
+      "shipping_address": {
+        "address1": "62577 Maybell Islands",
+        "city": "West Malloryport",
+        "region_code": "AR",
+        "postal_code": "82956-0864",
+        "country_code": "US",
+        "country": "United States",
+        "region": "Arkansas"
+      },
+      "is_active": false,
+      "tax_exemption": "CHARITABLE_ORG",
+      "currency": "LSL",
+      "is_customer": true,
+      "company_name": "Murphy, Bednar and Roob"
+    }
+  },
+  {
+    "external_id": "bfb69ea6-bb9f-46d2-9e0f-fae3d5e1ab14",
+    "name": "Mariano Pagac",
+    "primary_email": "mariano_pagac22@gmail.com",
+    "primary_phone": null,
+    "is_supplier": false,
+    "external_created_at": "2022-05-11T18:42:01.264Z",
+    "external_updated_at": "2024-03-03T10:11:02.180Z",
+    "raw_data": {
+      "id": "bfb69ea6-bb9f-46d2-9e0f-fae3d5e1ab14",
+      "created_at": "2022-05-11T18:42:01.264Z",
+      "updated_at": "2024-03-03T10:11:02.180Z",
+      "name": "Mariano Pagac",
+      "emails": [
+        {
+          "email": "mariano_pagac22@gmail.com",
+          "type": "OTHER"
+        },
+        {
+          "email": "mariano_pagac38@gmail.com",
+          "type": "HOME"
+        },
+        {
+          "email": "mariano_pagac2@yahoo.com",
+          "type": "HOME"
+        }
+      ],
+      "telephones": [
+        {
+          "telephone": "(502) 275-0912",
+          "type": "HOME"
+        },
+        {
+          "telephone": "(271) 967-2270",
+          "type": "HOME"
+        }
+      ],
+      "billing_address": {
+        "address1": "8387 Gottlieb Fall",
+        "address2": "Apt. 525",
+        "city": "New Kiley",
+        "region_code": "NY",
+        "postal_code": "05971",
+        "country_code": "US",
+        "country": "United States",
+        "region": "New York"
+      },
+      "shipping_address": {
+        "address1": "2302 Monty Groves",
+        "city": "Schneiderburgh",
+        "region_code": "KY",
+        "postal_code": "44061-9750",
+        "country_code": "US",
+        "country": "United States",
+        "region": "Kentucky"
+      },
+      "is_active": false,
+      "tax_exemption": "MEDICAL_ORG",
+      "currency": "SOS",
+      "is_customer": true,
+      "company_name": "Toy - Goodwin"
+    }
+  },
+  {
+    "external_id": "4631f5fc-5feb-4dc4-bf02-cefd02c31d4d",
+    "name": "Tremaine Wisoky",
+    "primary_email": "tremaine.wisoky@gmail.com",
+    "primary_phone": null,
+    "is_supplier": false,
+    "external_created_at": "2025-07-05T12:15:12.369Z",
+    "external_updated_at": "2025-08-03T16:42:12.208Z",
+    "raw_data": {
+      "id": "4631f5fc-5feb-4dc4-bf02-cefd02c31d4d",
+      "created_at": "2025-07-05T12:15:12.369Z",
+      "updated_at": "2025-08-03T16:42:12.208Z",
+      "name": "Tremaine Wisoky",
+      "emails": [
+        {
+          "email": "tremaine.wisoky@gmail.com",
+          "type": "HOME"
+        },
+        {
+          "email": "tremaine.wisoky12@hotmail.com",
+          "type": "OTHER"
+        }
+      ],
+      "telephones": [
+        {
+          "telephone": "(678) 573-4631",
+          "type": "OTHER"
+        }
+      ],
+      "billing_address": {
+        "address1": "8035 Monahan Fords",
+        "city": "Conorport",
+        "region_code": "IL",
+        "postal_code": "04375-9696",
+        "country_code": "US",
+        "country": "United States",
+        "region": "Illinois"
+      },
+      "shipping_address": {
+        "address1": "332 Schuppe Mountains",
+        "city": "West Fannie",
+        "region_code": "SC",
+        "postal_code": "64612-4089",
+        "country_code": "US",
+        "country": "United States",
+        "region": "South Carolina"
+      },
+      "is_active": false,
+      "tax_exemption": "EDUCATIONAL_ORG",
+      "currency": "SDG",
+      "is_customer": true,
+      "company_name": "Lockman - Osinski"
+    }
+  },
+  {
+    "external_id": "7073664c-625c-4a5d-9a9f-16d346f3345a",
+    "name": "Parker Heathcote",
+    "primary_email": "parker.heathcote@yahoo.com",
+    "primary_phone": null,
+    "is_supplier": false,
+    "external_created_at": "2023-07-02T14:18:34.677Z",
+    "external_updated_at": "2024-02-08T21:39:13.054Z",
+    "raw_data": {
+      "id": "7073664c-625c-4a5d-9a9f-16d346f3345a",
+      "created_at": "2023-07-02T14:18:34.677Z",
+      "updated_at": "2024-02-08T21:39:13.054Z",
+      "name": "Parker Heathcote",
+      "emails": [
+        {
+          "email": "parker.heathcote@yahoo.com",
+          "type": "WORK"
+        }
+      ],
+      "telephones": [
+        {
+          "telephone": "(492) 659-2842",
+          "type": "FAX"
+        }
+      ],
+      "billing_address": {
+        "address1": "752 Smitham View",
+        "address2": "Suite 516",
+        "city": "Henryfort",
+        "region_code": "MD",
+        "postal_code": "35586-5636",
+        "country_code": "US",
+        "country": "United States",
+        "region": "Maryland"
+      },
+      "shipping_address": {
+        "address1": "73884 W Lake Street",
+        "address2": "Apt. 956",
+        "city": "West Velma",
+        "region_code": "DE",
+        "postal_code": "17566-0000",
+        "country_code": "US",
+        "country": "United States",
+        "region": "Delaware"
+      },
+      "is_active": true,
+      "tax_exemption": "OTHER",
+      "currency": "GYD",
+      "is_customer": true,
+      "company_name": "Botsford, Wilderman and Keebler"
+    }
+  },
+  {
+    "external_id": "b467162a-c179-45d2-acac-65c9b1212525",
+    "name": "Ivory Prohaska",
+    "primary_email": "ivory.prohaska95@yahoo.com",
+    "primary_phone": null,
+    "is_supplier": false,
+    "external_created_at": "2024-08-06T10:45:19.476Z",
+    "external_updated_at": "2024-08-18T14:58:54.330Z",
+    "raw_data": {
+      "id": "b467162a-c179-45d2-acac-65c9b1212525",
+      "created_at": "2024-08-06T10:45:19.476Z",
+      "updated_at": "2024-08-18T14:58:54.330Z",
+      "name": "Ivory Prohaska",
+      "emails": [
+        {
+          "email": "ivory.prohaska95@yahoo.com",
+          "type": "OTHER"
+        },
+        {
+          "email": "ivory_prohaska7@hotmail.com",
+          "type": "HOME"
+        }
+      ],
+      "telephones": [
+        {
+          "telephone": "(267) 831-8943",
+          "type": "HOME"
+        }
+      ],
+      "billing_address": {
+        "address1": "8427 Esteban Freeway",
+        "address2": "Apt. 300",
+        "city": "Clifton",
+        "region_code": "CO",
+        "postal_code": "25283-0828",
+        "country_code": "US",
+        "country": "United States",
+        "region": "Colorado"
+      },
+      "shipping_address": {
+        "address1": "6668 Sawayn Plains",
+        "address2": "Suite 817",
+        "city": "Marlenetown",
+        "region_code": "IA",
+        "postal_code": "52310",
+        "country_code": "US",
+        "country": "United States",
+        "region": "Iowa"
+      },
+      "is_active": true,
+      "tax_exemption": "FOREIGN",
+      "currency": "GNF",
+      "is_customer": true,
+      "company_name": "Hegmann - Kessler"
+    }
+  },
+  {
+    "external_id": "c4094580-c369-4a51-b9b8-25e464be699b",
+    "name": "Wilburn Reichert",
+    "primary_email": "wilburn.reichert64@gmail.com",
+    "primary_phone": null,
+    "is_supplier": false,
+    "external_created_at": "2024-07-19T04:51:23.434Z",
+    "external_updated_at": "2024-12-07T16:33:29.722Z",
+    "raw_data": {
+      "id": "c4094580-c369-4a51-b9b8-25e464be699b",
+      "created_at": "2024-07-19T04:51:23.434Z",
+      "updated_at": "2024-12-07T16:33:29.722Z",
+      "name": "Wilburn Reichert",
+      "emails": [
+        {
+          "email": "wilburn.reichert64@gmail.com",
+          "type": "WORK"
+        },
+        {
+          "email": "wilburn_reichert@hotmail.com",
+          "type": "HOME"
+        },
+        {
+          "email": "wilburn_reichert5@yahoo.com",
+          "type": "HOME"
+        }
+      ],
+      "telephones": [
+        {
+          "telephone": "(635) 457-0473",
+          "type": "HOME"
+        }
+      ],
+      "billing_address": {
+        "address1": "1863 Everett Squares",
+        "city": "Camillemouth",
+        "region_code": "WI",
+        "postal_code": "89499",
+        "country_code": "US",
+        "country": "United States",
+        "region": "Wisconsin"
+      },
+      "shipping_address": {
+        "address1": "7709 Chapel Hill",
+        "city": "West Lenorehaven",
+        "region_code": "SD",
+        "postal_code": "28477",
+        "country_code": "US",
+        "country": "United States",
+        "region": "South Dakota"
+      },
+      "is_active": false,
+      "tax_exemption": "CHARITABLE_ORG",
+      "currency": "RWF",
+      "is_customer": true,
+      "company_name": "DuBuque Inc"
+    }
+  },
+  {
+    "external_id": "6519c4f9-8e14-49fb-9e6d-0e42daffe831",
+    "name": "Joana Deckow",
+    "primary_email": "joana_deckow@gmail.com",
+    "primary_phone": null,
+    "is_supplier": false,
+    "external_created_at": "2025-03-13T11:45:05.709Z",
+    "external_updated_at": "2025-06-17T23:47:42.230Z",
+    "raw_data": {
+      "id": "6519c4f9-8e14-49fb-9e6d-0e42daffe831",
+      "created_at": "2025-03-13T11:45:05.709Z",
+      "updated_at": "2025-06-17T23:47:42.230Z",
+      "name": "Joana Deckow",
+      "emails": [
+        {
+          "email": "joana_deckow@gmail.com",
+          "type": "OTHER"
+        },
+        {
+          "email": "joana.deckow@yahoo.com",
+          "type": "OTHER"
+        }
+      ],
+      "telephones": [
+        {
+          "telephone": "(318) 478-4532",
+          "type": "MOBILE"
+        },
+        {
+          "telephone": "(707) 330-5367",
+          "type": "MOBILE"
+        }
+      ],
+      "billing_address": {
+        "address1": "7956 N Court Street",
+        "city": "Stokesport",
+        "region_code": "GA",
+        "postal_code": "66250-4129",
+        "country_code": "US",
+        "country": "United States",
+        "region": "Georgia"
+      },
+      "shipping_address": {
+        "address1": "58166 S 6th Street",
+        "city": "Marioboro",
+        "region_code": "MD",
+        "postal_code": "39978-6059",
+        "country_code": "US",
+        "country": "United States",
+        "region": "Maryland"
+      },
+      "is_active": false,
+      "tax_exemption": "RESALE",
+      "currency": "AFN",
+      "is_customer": true,
+      "company_name": "Leffler, Hauck and Thiel"
+    }
+  },
+  {
+    "external_id": "a3f48291-b6e2-4986-be32-c35db16927c7",
+    "name": "Dakota Metz-Dicki",
+    "primary_email": "dakota.metz-dicki49@hotmail.com",
+    "primary_phone": null,
+    "is_supplier": false,
+    "external_created_at": "2024-04-30T20:12:19.702Z",
+    "external_updated_at": "2024-09-21T18:56:34.534Z",
+    "raw_data": {
+      "id": "a3f48291-b6e2-4986-be32-c35db16927c7",
+      "created_at": "2024-04-30T20:12:19.702Z",
+      "updated_at": "2024-09-21T18:56:34.534Z",
+      "name": "Dakota Metz-Dicki",
+      "emails": [
+        {
+          "email": "dakota.metz-dicki49@hotmail.com",
+          "type": "HOME"
+        },
+        {
+          "email": "dakota_metz-dicki22@gmail.com",
+          "type": "HOME"
+        }
+      ],
+      "telephones": [
+        {
+          "telephone": "(961) 277-8369",
+          "type": "HOME"
+        }
+      ],
+      "billing_address": {
+        "address1": "484 Felipa Square",
+        "address2": "Suite 595",
+        "city": "North Eric",
+        "region_code": "SD",
+        "postal_code": "06811-7822",
+        "country_code": "US",
+        "country": "United States",
+        "region": "South Dakota"
+      },
+      "shipping_address": {
+        "address1": "737 Buckingham Road",
+        "city": "Port Lea",
+        "region_code": "VA",
+        "postal_code": "16295",
+        "country_code": "US",
+        "country": "United States",
+        "region": "Virginia"
+      },
+      "is_active": false,
+      "tax_exemption": "FOREIGN",
+      "currency": "TND",
+      "is_customer": true,
+      "company_name": "Robel - Nienow"
+    }
+  },
+  {
+    "external_id": "b1143a4f-1e8d-417b-9840-3b11866ffb58",
+    "name": "Edythe Upton",
+    "primary_email": "edythe_upton@yahoo.com",
+    "primary_phone": null,
+    "is_supplier": false,
+    "external_created_at": "2025-04-27T23:12:27.042Z",
+    "external_updated_at": "2025-05-08T07:23:51.372Z",
+    "raw_data": {
+      "id": "b1143a4f-1e8d-417b-9840-3b11866ffb58",
+      "created_at": "2025-04-27T23:12:27.042Z",
+      "updated_at": "2025-05-08T07:23:51.372Z",
+      "name": "Edythe Upton",
+      "emails": [
+        {
+          "email": "edythe_upton@yahoo.com",
+          "type": "WORK"
+        },
+        {
+          "email": "edythe.upton12@hotmail.com",
+          "type": "HOME"
+        },
+        {
+          "email": "edythe.upton18@yahoo.com",
+          "type": "OTHER"
+        }
+      ],
+      "telephones": [
+        {
+          "telephone": "(941) 938-1820",
+          "type": "WORK"
+        }
+      ],
+      "billing_address": {
+        "address1": "55755 Casper Lights",
+        "address2": "Apt. 954",
+        "city": "Pfefferbury",
+        "region_code": "ID",
+        "postal_code": "53610",
+        "country_code": "US",
+        "country": "United States",
+        "region": "Idaho"
+      },
+      "shipping_address": {
+        "address1": "5791 Elfrieda Parks",
+        "city": "Jacobiboro",
+        "region_code": "NC",
+        "postal_code": "91511",
+        "country_code": "US",
+        "country": "United States",
+        "region": "North Carolina"
+      },
+      "is_active": true,
+      "tax_exemption": "RESALE",
+      "currency": "SBD",
+      "is_customer": true,
+      "company_name": "Sanford, Labadie and Friesen"
+    }
+  },
+  {
+    "external_id": "cc6c018f-ec08-4494-8d81-0a561009070f",
+    "name": "Christian Rodriguez",
+    "primary_email": "christian.rodriguez44@yahoo.com",
+    "primary_phone": null,
+    "is_supplier": false,
+    "external_created_at": "2024-06-12T14:46:02.121Z",
+    "external_updated_at": "2024-07-13T07:58:47.241Z",
+    "raw_data": {
+      "id": "cc6c018f-ec08-4494-8d81-0a561009070f",
+      "created_at": "2024-06-12T14:46:02.121Z",
+      "updated_at": "2024-07-13T07:58:47.241Z",
+      "name": "Christian Rodriguez",
+      "emails": [
+        {
+          "email": "christian.rodriguez44@yahoo.com",
+          "type": "HOME"
+        },
+        {
+          "email": "christian_rodriguez@yahoo.com",
+          "type": "OTHER"
+        },
+        {
+          "email": "christian.rodriguez0@gmail.com",
+          "type": "OTHER"
+        }
+      ],
+      "telephones": [
+        {
+          "telephone": "(751) 231-8131",
+          "type": "FAX"
+        }
+      ],
+      "billing_address": {
+        "address1": "3314 Alfreda Via",
+        "city": "Keeblerbury",
+        "region_code": "ID",
+        "postal_code": "36625",
+        "country_code": "US",
+        "country": "United States",
+        "region": "Idaho"
+      },
+      "shipping_address": {
+        "address1": "7694 General Skyway",
+        "address2": "Suite 333",
+        "city": "Lake Clemmiefurt",
+        "region_code": "MA",
+        "postal_code": "94177",
+        "country_code": "US",
+        "country": "United States",
+        "region": "Massachusetts"
+      },
+      "is_active": false,
+      "tax_exemption": "MEDICAL_ORG",
+      "currency": "MYR",
+      "is_customer": true,
+      "company_name": "Rutherford, Zulauf and Zieme"
+    }
+  },
+  {
+    "external_id": "b39d59b3-181a-44c6-9508-f9cb56a0c3b5",
+    "name": "Jude Hyatt",
+    "primary_email": "jude.hyatt@gmail.com",
+    "primary_phone": null,
+    "is_supplier": false,
+    "external_created_at": "2021-06-09T13:04:26.634Z",
+    "external_updated_at": "2024-12-05T13:35:04.763Z",
+    "raw_data": {
+      "id": "b39d59b3-181a-44c6-9508-f9cb56a0c3b5",
+      "created_at": "2021-06-09T13:04:26.634Z",
+      "updated_at": "2024-12-05T13:35:04.763Z",
+      "name": "Jude Hyatt",
+      "emails": [
+        {
+          "email": "jude.hyatt@gmail.com",
+          "type": "OTHER"
+        }
+      ],
+      "telephones": [
+        {
+          "telephone": "(377) 270-6083",
+          "type": "WORK"
+        },
+        {
+          "telephone": "(902) 848-7362",
+          "type": "FAX"
+        },
+        {
+          "telephone": "(890) 601-7386",
+          "type": "OTHER"
+        }
+      ],
+      "billing_address": {
+        "address1": "880 Canal Street",
+        "address2": "Suite 488",
+        "city": "South Myrticeboro",
+        "region_code": "NM",
+        "postal_code": "75867-2915",
+        "country_code": "US",
+        "country": "United States",
+        "region": "New Mexico"
+      },
+      "shipping_address": {
+        "address1": "962 Lakin Avenue",
+        "city": "Lake Casandra",
+        "region_code": "NC",
+        "postal_code": "73199-2335",
+        "country_code": "US",
+        "country": "United States",
+        "region": "North Carolina"
+      },
+      "is_active": false,
+      "tax_exemption": "RESALE",
+      "currency": "MNT",
+      "is_customer": true,
+      "company_name": "Kertzmann, Hammes and Schaefer"
+    }
+  },
+  {
+    "external_id": "2badbe40-d139-4acf-9206-7f2a0d143a42",
+    "name": "Kaylee Franecki",
+    "primary_email": "kaylee_franecki@gmail.com",
+    "primary_phone": null,
+    "is_supplier": false,
+    "external_created_at": "2022-03-05T11:20:50.453Z",
+    "external_updated_at": "2022-06-16T15:45:32.591Z",
+    "raw_data": {
+      "id": "2badbe40-d139-4acf-9206-7f2a0d143a42",
+      "created_at": "2022-03-05T11:20:50.453Z",
+      "updated_at": "2022-06-16T15:45:32.591Z",
+      "name": "Kaylee Franecki",
+      "emails": [
+        {
+          "email": "kaylee_franecki@gmail.com",
+          "type": "OTHER"
+        },
+        {
+          "email": "kaylee.franecki59@gmail.com",
+          "type": "OTHER"
+        }
+      ],
+      "telephones": [
+        {
+          "telephone": "(403) 901-3690",
+          "type": "OTHER"
+        },
+        {
+          "telephone": "(828) 434-3479",
+          "type": "MOBILE"
+        },
+        {
+          "telephone": "(347) 967-5314",
+          "type": "MOBILE"
+        }
+      ],
+      "billing_address": {
+        "address1": "1364 Stehr Junction",
+        "address2": "Suite 941",
+        "city": "Aliso Viejo",
+        "region_code": "AK",
+        "postal_code": "80036",
+        "country_code": "US",
+        "country": "United States",
+        "region": "Alaska"
+      },
+      "shipping_address": {
+        "address1": "5767 Clinton Oval",
+        "city": "Furmanport",
+        "region_code": "ND",
+        "postal_code": "06775",
+        "country_code": "US",
+        "country": "United States",
+        "region": "North Dakota"
+      },
+      "is_active": true,
+      "tax_exemption": "FOREIGN",
+      "currency": "RON",
+      "is_customer": true,
+      "company_name": "Emmerich - Purdy"
+    }
+  },
+  {
+    "external_id": "3683321a-890f-4e80-993f-f7d6431bdfcb",
+    "name": "Dena Becker",
+    "primary_email": "dena_becker3@yahoo.com",
+    "primary_phone": null,
+    "is_supplier": false,
+    "external_created_at": "2024-01-26T14:02:41.528Z",
+    "external_updated_at": "2024-10-25T13:04:46.931Z",
+    "raw_data": {
+      "id": "3683321a-890f-4e80-993f-f7d6431bdfcb",
+      "created_at": "2024-01-26T14:02:41.528Z",
+      "updated_at": "2024-10-25T13:04:46.931Z",
+      "name": "Dena Becker",
+      "emails": [
+        {
+          "email": "dena_becker3@yahoo.com",
+          "type": "OTHER"
+        }
+      ],
+      "telephones": [
+        {
+          "telephone": "(877) 992-0302",
+          "type": "OTHER"
+        },
+        {
+          "telephone": "(554) 593-7760",
+          "type": "HOME"
+        }
+      ],
+      "billing_address": {
+        "address1": "56786 Christopher Squares",
+        "address2": "Suite 291",
+        "city": "Port Dimitriside",
+        "region_code": "IL",
+        "postal_code": "02204-3404",
+        "country_code": "US",
+        "country": "United States",
+        "region": "Illinois"
+      },
+      "shipping_address": {
+        "address1": "6035 Gordon Road",
+        "address2": "Apt. 232",
+        "city": "Fort Krystel",
+        "region_code": "SC",
+        "postal_code": "90932",
+        "country_code": "US",
+        "country": "United States",
+        "region": "South Carolina"
+      },
+      "is_active": true,
+      "tax_exemption": "MEDICAL_ORG",
+      "currency": "PLN",
+      "is_customer": true,
+      "company_name": "Luettgen - Pfeffer"
+    }
+  },
+  {
+    "external_id": "8f3d5594-ab71-4402-873a-2a325c097208",
+    "name": "Arielle Walsh",
+    "primary_email": "arielle_walsh61@gmail.com",
+    "primary_phone": null,
+    "is_supplier": false,
+    "external_created_at": "2023-06-26T18:41:54.971Z",
+    "external_updated_at": "2024-09-09T13:56:17.777Z",
+    "raw_data": {
+      "id": "8f3d5594-ab71-4402-873a-2a325c097208",
+      "created_at": "2023-06-26T18:41:54.971Z",
+      "updated_at": "2024-09-09T13:56:17.777Z",
+      "name": "Arielle Walsh",
+      "emails": [
+        {
+          "email": "arielle_walsh61@gmail.com",
+          "type": "OTHER"
+        },
+        {
+          "email": "arielle_walsh@gmail.com",
+          "type": "OTHER"
+        },
+        {
+          "email": "arielle.walsh@hotmail.com",
+          "type": "WORK"
+        }
+      ],
+      "telephones": [
+        {
+          "telephone": "(522) 781-0632",
+          "type": "HOME"
+        }
+      ],
+      "billing_address": {
+        "address1": "63325 St George's Road",
+        "address2": "Apt. 308",
+        "city": "Fort Leobury",
+        "region_code": "PA",
+        "postal_code": "77386-5731",
+        "country_code": "US",
+        "country": "United States",
+        "region": "Pennsylvania"
+      },
+      "shipping_address": {
+        "address1": "932 S Market Street",
+        "city": "Port Camron",
+        "region_code": "SD",
+        "postal_code": "58769",
+        "country_code": "US",
+        "country": "United States",
+        "region": "South Dakota"
+      },
+      "is_active": true,
+      "tax_exemption": "TRIBAL_GOV",
+      "currency": "CVE",
+      "is_customer": true,
+      "company_name": "Hegmann - Dach"
+    }
+  },
+  {
+    "external_id": "bd3916d5-ecef-440e-af37-e9c0afee8be0",
+    "name": "Jannie Ledner",
+    "primary_email": "jannie.ledner@gmail.com",
+    "primary_phone": null,
+    "is_supplier": false,
+    "external_created_at": "2023-01-20T15:14:02.778Z",
+    "external_updated_at": "2025-06-02T00:00:15.988Z",
+    "raw_data": {
+      "id": "bd3916d5-ecef-440e-af37-e9c0afee8be0",
+      "created_at": "2023-01-20T15:14:02.778Z",
+      "updated_at": "2025-06-02T00:00:15.988Z",
+      "name": "Jannie Ledner",
+      "emails": [
+        {
+          "email": "jannie.ledner@gmail.com",
+          "type": "HOME"
+        }
+      ],
+      "telephones": [
+        {
+          "telephone": "(251) 397-1188",
+          "type": "FAX"
+        },
+        {
+          "telephone": "(540) 841-2640",
+          "type": "FAX"
+        }
+      ],
+      "billing_address": {
+        "address1": "5876 Runolfsson Forge",
+        "address2": "Suite 736",
+        "city": "West Alba",
+        "region_code": "NY",
+        "postal_code": "18426",
+        "country_code": "US",
+        "country": "United States",
+        "region": "New York"
+      },
+      "shipping_address": {
+        "address1": "811 Horacio Freeway",
+        "address2": "Apt. 101",
+        "city": "Moenstad",
+        "region_code": "AZ",
+        "postal_code": "88634-3529",
+        "country_code": "US",
+        "country": "United States",
+        "region": "Arizona"
+      },
+      "is_active": true,
+      "tax_exemption": "CHARITABLE_ORG",
+      "currency": "UAH",
+      "is_customer": true,
+      "company_name": "Langworth - Torp"
+    }
+  },
+  {
+    "external_id": "ec14fb6a-42f0-4e4e-9461-2b524157bf87",
+    "name": "Nicholas Muller-Corkery",
+    "primary_email": "nicholas.muller-corkery@gmail.com",
+    "primary_phone": null,
+    "is_supplier": false,
+    "external_created_at": "2023-07-21T01:45:10.801Z",
+    "external_updated_at": "2024-01-13T09:59:04.524Z",
+    "raw_data": {
+      "id": "ec14fb6a-42f0-4e4e-9461-2b524157bf87",
+      "created_at": "2023-07-21T01:45:10.801Z",
+      "updated_at": "2024-01-13T09:59:04.524Z",
+      "name": "Nicholas Muller-Corkery",
+      "emails": [
+        {
+          "email": "nicholas.muller-corkery@gmail.com",
+          "type": "HOME"
+        },
+        {
+          "email": "nicholas_muller-corkery@yahoo.com",
+          "type": "WORK"
+        },
+        {
+          "email": "nicholas_muller-corkery6@gmail.com",
+          "type": "WORK"
+        }
+      ],
+      "telephones": [
+        {
+          "telephone": "(707) 906-7081",
+          "type": "MOBILE"
+        },
+        {
+          "telephone": "(730) 616-4613",
+          "type": "FAX"
+        }
+      ],
+      "billing_address": {
+        "address1": "2551 Arlie Cape",
+        "address2": "Apt. 705",
+        "city": "Fort Astridburgh",
+        "region_code": "CT",
+        "postal_code": "75016",
+        "country_code": "US",
+        "country": "United States",
+        "region": "Connecticut"
+      },
+      "shipping_address": {
+        "address1": "7161 Max Drive",
+        "city": "West Missouri",
+        "region_code": "NE",
+        "postal_code": "62861",
+        "country_code": "US",
+        "country": "United States",
+        "region": "Nebraska"
+      },
+      "is_active": true,
+      "tax_exemption": "CHARITABLE_ORG",
+      "currency": "SEK",
+      "is_customer": true,
+      "company_name": "Walter - Rohan"
+    }
+  },
+  {
+    "external_id": "2ab80c76-e26f-48dd-abe0-a4e463e125f6",
+    "name": "Colton Considine",
+    "primary_email": "colton_considine@hotmail.com",
+    "primary_phone": null,
+    "is_supplier": false,
+    "external_created_at": "2023-08-08T01:05:58.111Z",
+    "external_updated_at": "2023-10-04T06:05:49.433Z",
+    "raw_data": {
+      "id": "2ab80c76-e26f-48dd-abe0-a4e463e125f6",
+      "created_at": "2023-08-08T01:05:58.111Z",
+      "updated_at": "2023-10-04T06:05:49.433Z",
+      "name": "Colton Considine",
+      "emails": [
+        {
+          "email": "colton_considine@hotmail.com",
+          "type": "OTHER"
+        }
+      ],
+      "telephones": [
+        {
+          "telephone": "(905) 831-2869",
+          "type": "WORK"
+        }
+      ],
+      "billing_address": {
+        "address1": "396 Hoppe Terrace",
+        "city": "Fort Elizabeth",
+        "region_code": "FL",
+        "postal_code": "62536",
+        "country_code": "US",
+        "country": "United States",
+        "region": "Florida"
+      },
+      "shipping_address": {
+        "address1": "247 Lee Stream",
+        "address2": "Apt. 914",
+        "city": "Lake Arnoldport",
+        "region_code": "LA",
+        "postal_code": "17543",
+        "country_code": "US",
+        "country": "United States",
+        "region": "Louisiana"
+      },
+      "is_active": true,
+      "tax_exemption": "TRIBAL_GOV",
+      "currency": "KZT",
+      "is_customer": true,
+      "company_name": "Wolff - Larson"
+    }
+  },
+  {
+    "external_id": "7f861950-5fb6-4979-8f6c-fb8ffac83e0d",
+    "name": "Jocelyn Bartoletti",
+    "primary_email": "jocelyn.bartoletti@hotmail.com",
+    "primary_phone": null,
+    "is_supplier": false,
+    "external_created_at": "2020-10-17T10:00:59.636Z",
+    "external_updated_at": "2021-10-06T14:40:46.297Z",
+    "raw_data": {
+      "id": "7f861950-5fb6-4979-8f6c-fb8ffac83e0d",
+      "created_at": "2020-10-17T10:00:59.636Z",
+      "updated_at": "2021-10-06T14:40:46.297Z",
+      "name": "Jocelyn Bartoletti",
+      "emails": [
+        {
+          "email": "jocelyn.bartoletti@hotmail.com",
+          "type": "OTHER"
+        }
+      ],
+      "telephones": [
+        {
+          "telephone": "(895) 344-7065",
+          "type": "FAX"
+        },
+        {
+          "telephone": "(852) 540-7001",
+          "type": "MOBILE"
+        }
+      ],
+      "billing_address": {
+        "address1": "49338 Simonis Spring",
+        "address2": "Apt. 856",
+        "city": "Downers Grove",
+        "region_code": "TX",
+        "postal_code": "41873-1521",
+        "country_code": "US",
+        "country": "United States",
+        "region": "Texas"
+      },
+      "shipping_address": {
+        "address1": "3176 Emmerich Summit",
+        "city": "East Kelli",
+        "region_code": "NY",
+        "postal_code": "29292-3279",
+        "country_code": "US",
+        "country": "United States",
+        "region": "New York"
+      },
+      "is_active": true,
+      "tax_exemption": "MEDICAL_ORG",
+      "currency": "DOP",
+      "is_customer": true,
+      "company_name": "Friesen Group"
+    }
+  },
+  {
+    "external_id": "1bb2db50-7358-422f-9ef3-a609d38cd392",
+    "name": "Perry Stanton",
+    "primary_email": "perry_stanton35@gmail.com",
+    "primary_phone": null,
+    "is_supplier": false,
+    "external_created_at": "2023-08-23T20:04:43.588Z",
+    "external_updated_at": "2024-11-23T00:37:57.442Z",
+    "raw_data": {
+      "id": "1bb2db50-7358-422f-9ef3-a609d38cd392",
+      "created_at": "2023-08-23T20:04:43.588Z",
+      "updated_at": "2024-11-23T00:37:57.442Z",
+      "name": "Perry Stanton",
+      "emails": [
+        {
+          "email": "perry_stanton35@gmail.com",
+          "type": "HOME"
+        },
+        {
+          "email": "perry.stanton7@hotmail.com",
+          "type": "HOME"
+        }
+      ],
+      "telephones": [
+        {
+          "telephone": "(601) 367-4715",
+          "type": "HOME"
+        },
+        {
+          "telephone": "(500) 976-9476",
+          "type": "HOME"
+        }
+      ],
+      "billing_address": {
+        "address1": "5221 Harrison Avenue",
+        "city": "O'Reillyside",
+        "region_code": "OR",
+        "postal_code": "39281-3534",
+        "country_code": "US",
+        "country": "United States",
+        "region": "Oregon"
+      },
+      "shipping_address": {
+        "address1": "905 Jast Fort",
+        "city": "Parker",
+        "region_code": "OH",
+        "postal_code": "77898-9625",
+        "country_code": "US",
+        "country": "United States",
+        "region": "Ohio"
+      },
+      "is_active": false,
+      "tax_exemption": "CHARITABLE_ORG",
+      "currency": "TZS",
+      "is_customer": true,
+      "company_name": "Osinski Group"
+    }
+  },
+  {
+    "external_id": "7416d739-d516-4708-a8bb-2be7e124834e",
+    "name": "Rodger Parker",
+    "primary_email": "rodger_parker13@yahoo.com",
+    "primary_phone": null,
+    "is_supplier": false,
+    "external_created_at": "2021-12-28T19:07:28.284Z",
+    "external_updated_at": "2023-08-20T09:01:40.825Z",
+    "raw_data": {
+      "id": "7416d739-d516-4708-a8bb-2be7e124834e",
+      "created_at": "2021-12-28T19:07:28.284Z",
+      "updated_at": "2023-08-20T09:01:40.825Z",
+      "name": "Rodger Parker",
+      "emails": [
+        {
+          "email": "rodger_parker13@yahoo.com",
+          "type": "OTHER"
+        },
+        {
+          "email": "rodger.parker@yahoo.com",
+          "type": "OTHER"
+        }
+      ],
+      "telephones": [
+        {
+          "telephone": "(415) 603-3832",
+          "type": "MOBILE"
+        },
+        {
+          "telephone": "(938) 598-8810",
+          "type": "WORK"
+        }
+      ],
+      "billing_address": {
+        "address1": "18877 Howard Road",
+        "address2": "Apt. 288",
+        "city": "Aidencester",
+        "region_code": "NH",
+        "postal_code": "04795-6887",
+        "country_code": "US",
+        "country": "United States",
+        "region": "New Hampshire"
+      },
+      "shipping_address": {
+        "address1": "268 Tennyson Road",
+        "city": "Caspermouth",
+        "region_code": "IA",
+        "postal_code": "60515-5962",
+        "country_code": "US",
+        "country": "United States",
+        "region": "Iowa"
+      },
+      "is_active": false,
+      "tax_exemption": "MEDICAL_ORG",
+      "currency": "MAD",
+      "is_customer": true,
+      "company_name": "Dooley - Brown"
+    }
+  },
+  {
+    "external_id": "b9332c58-0eb8-4f1e-8b26-ffb3a0443a56",
+    "name": "Eulalia King",
+    "primary_email": "eulalia.king73@yahoo.com",
+    "primary_phone": null,
+    "is_supplier": false,
+    "external_created_at": "2021-11-11T19:44:30.588Z",
+    "external_updated_at": "2024-08-15T00:59:43.594Z",
+    "raw_data": {
+      "id": "b9332c58-0eb8-4f1e-8b26-ffb3a0443a56",
+      "created_at": "2021-11-11T19:44:30.588Z",
+      "updated_at": "2024-08-15T00:59:43.594Z",
+      "name": "Eulalia King",
+      "emails": [
+        {
+          "email": "eulalia.king73@yahoo.com",
+          "type": "HOME"
+        },
+        {
+          "email": "eulalia.king@gmail.com",
+          "type": "WORK"
+        }
+      ],
+      "telephones": [
+        {
+          "telephone": "(842) 443-5477",
+          "type": "WORK"
+        }
+      ],
+      "billing_address": {
+        "address1": "375 Orchard Road",
+        "city": "Spencerfort",
+        "region_code": "DE",
+        "postal_code": "91770",
+        "country_code": "US",
+        "country": "United States",
+        "region": "Delaware"
+      },
+      "shipping_address": {
+        "address1": "115 Birch Avenue",
+        "address2": "Suite 206",
+        "city": "Port Bethelmouth",
+        "region_code": "CO",
+        "postal_code": "20203",
+        "country_code": "US",
+        "country": "United States",
+        "region": "Colorado"
+      },
+      "is_active": false,
+      "tax_exemption": "LOCAL_GOV",
+      "currency": "TZS",
+      "is_customer": true,
+      "company_name": "Dooley Inc"
+    }
+  },
+  {
+    "external_id": "e13bead6-800b-4d74-bf60-9693daa1fa24",
+    "name": "Daryl Bashirian",
+    "primary_email": "daryl_bashirian82@gmail.com",
+    "primary_phone": null,
+    "is_supplier": false,
+    "external_created_at": "2023-05-27T20:39:38.975Z",
+    "external_updated_at": "2024-07-02T04:30:52.278Z",
+    "raw_data": {
+      "id": "e13bead6-800b-4d74-bf60-9693daa1fa24",
+      "created_at": "2023-05-27T20:39:38.975Z",
+      "updated_at": "2024-07-02T04:30:52.278Z",
+      "name": "Daryl Bashirian",
+      "emails": [
+        {
+          "email": "daryl_bashirian82@gmail.com",
+          "type": "WORK"
+        }
+      ],
+      "telephones": [
+        {
+          "telephone": "(501) 723-7079",
+          "type": "OTHER"
+        },
+        {
+          "telephone": "(346) 533-4348",
+          "type": "FAX"
+        },
+        {
+          "telephone": "(282) 736-2690",
+          "type": "OTHER"
+        }
+      ],
+      "billing_address": {
+        "address1": "9604 Celestino Rapids",
+        "city": "Elenoraburgh",
+        "region_code": "LA",
+        "postal_code": "65813",
+        "country_code": "US",
+        "country": "United States",
+        "region": "Louisiana"
+      },
+      "shipping_address": {
+        "address1": "495 Lodge Lane",
+        "city": "Lake Lula",
+        "region_code": "OR",
+        "postal_code": "99011",
+        "country_code": "US",
+        "country": "United States",
+        "region": "Oregon"
+      },
+      "is_active": false,
+      "tax_exemption": "FOREIGN",
+      "currency": "AZN",
+      "is_customer": true,
+      "company_name": "Jakubowski - Ruecker"
+    }
+  },
+  {
+    "external_id": "a86fc258-f803-4926-b73d-498a4c4abc45",
+    "name": "Antonia Jaskolski",
+    "primary_email": "antonia_jaskolski25@gmail.com",
+    "primary_phone": null,
+    "is_supplier": false,
+    "external_created_at": "2021-08-02T23:06:08.682Z",
+    "external_updated_at": "2024-11-25T02:32:42.450Z",
+    "raw_data": {
+      "id": "a86fc258-f803-4926-b73d-498a4c4abc45",
+      "created_at": "2021-08-02T23:06:08.682Z",
+      "updated_at": "2024-11-25T02:32:42.450Z",
+      "name": "Antonia Jaskolski",
+      "emails": [
+        {
+          "email": "antonia_jaskolski25@gmail.com",
+          "type": "OTHER"
+        }
+      ],
+      "telephones": [
+        {
+          "telephone": "(288) 608-3201",
+          "type": "WORK"
+        },
+        {
+          "telephone": "(474) 204-9647",
+          "type": "HOME"
+        }
+      ],
+      "billing_address": {
+        "address1": "34418 Cross Street",
+        "address2": "Suite 102",
+        "city": "Julianfurt",
+        "region_code": "ME",
+        "postal_code": "43449",
+        "country_code": "US",
+        "country": "United States",
+        "region": "Maine"
+      },
+      "shipping_address": {
+        "address1": "8067 Marks Path",
+        "address2": "Suite 700",
+        "city": "West Brennonstead",
+        "region_code": "WV",
+        "postal_code": "16334-0771",
+        "country_code": "US",
+        "country": "United States",
+        "region": "West Virginia"
+      },
+      "is_active": false,
+      "tax_exemption": "OTHER",
+      "currency": "GHS",
+      "is_customer": true,
+      "company_name": "Zieme - Ferry"
+    }
+  },
+  {
+    "external_id": "5b70deda-031d-46e3-a9f0-4c5a67a443d3",
+    "name": "Maxine Gulgowski",
+    "primary_email": "maxine_gulgowski@gmail.com",
+    "primary_phone": null,
+    "is_supplier": false,
+    "external_created_at": "2022-07-30T15:23:38.758Z",
+    "external_updated_at": "2023-03-13T16:31:09.892Z",
+    "raw_data": {
+      "id": "5b70deda-031d-46e3-a9f0-4c5a67a443d3",
+      "created_at": "2022-07-30T15:23:38.758Z",
+      "updated_at": "2023-03-13T16:31:09.892Z",
+      "name": "Maxine Gulgowski",
+      "emails": [
+        {
+          "email": "maxine_gulgowski@gmail.com",
+          "type": "WORK"
+        }
+      ],
+      "telephones": [
+        {
+          "telephone": "(540) 530-5599",
+          "type": "OTHER"
+        },
+        {
+          "telephone": "(365) 500-4998",
+          "type": "WORK"
+        }
+      ],
+      "billing_address": {
+        "address1": "20453 Carter Ferry",
+        "address2": "Apt. 829",
+        "city": "South Hill",
+        "region_code": "LA",
+        "postal_code": "28063",
+        "country_code": "US",
+        "country": "United States",
+        "region": "Louisiana"
+      },
+      "shipping_address": {
+        "address1": "6318 W Oak Street",
+        "city": "North Georgettefurt",
+        "region_code": "SC",
+        "postal_code": "45345-2893",
+        "country_code": "US",
+        "country": "United States",
+        "region": "South Carolina"
+      },
+      "is_active": true,
+      "tax_exemption": "LOCAL_GOV",
+      "currency": "UAH",
+      "is_customer": true,
+      "company_name": "Goldner and Sons"
+    }
+  },
+  {
+    "external_id": "3f7ba7cb-67e3-4edc-8bff-1381d2f0b11f",
+    "name": "Nelda Cassin",
+    "primary_email": "nelda.cassin@hotmail.com",
+    "primary_phone": null,
+    "is_supplier": false,
+    "external_created_at": "2021-04-26T09:37:42.658Z",
+    "external_updated_at": "2023-03-02T08:39:51.813Z",
+    "raw_data": {
+      "id": "3f7ba7cb-67e3-4edc-8bff-1381d2f0b11f",
+      "created_at": "2021-04-26T09:37:42.658Z",
+      "updated_at": "2023-03-02T08:39:51.813Z",
+      "name": "Nelda Cassin",
+      "emails": [
+        {
+          "email": "nelda.cassin@hotmail.com",
+          "type": "WORK"
+        },
+        {
+          "email": "nelda.cassin51@hotmail.com",
+          "type": "WORK"
+        },
+        {
+          "email": "nelda_cassin69@gmail.com",
+          "type": "OTHER"
+        }
+      ],
+      "telephones": [
+        {
+          "telephone": "(935) 683-0476",
+          "type": "FAX"
+        },
+        {
+          "telephone": "(604) 341-7409",
+          "type": "HOME"
+        },
+        {
+          "telephone": "(609) 828-2047",
+          "type": "FAX"
+        }
+      ],
+      "billing_address": {
+        "address1": "98963 Harber Parks",
+        "city": "Waterloo",
+        "region_code": "NE",
+        "postal_code": "08379",
+        "country_code": "US",
+        "country": "United States",
+        "region": "Nebraska"
+      },
+      "shipping_address": {
+        "address1": "7371 Powlowski Ramp",
+        "city": "Middletown",
+        "region_code": "OR",
+        "postal_code": "28886-1565",
+        "country_code": "US",
+        "country": "United States",
+        "region": "Oregon"
+      },
+      "is_active": true,
+      "tax_exemption": "RESALE",
+      "currency": "PEN",
+      "is_customer": true,
+      "company_name": "Schuster - Wiza"
+    }
+  },
+  {
+    "external_id": "4649484a-917a-47d3-a5c6-7dc603e195f9",
+    "name": "Kennedi Kiehn",
+    "primary_email": "kennedi_kiehn50@yahoo.com",
+    "primary_phone": null,
+    "is_supplier": false,
+    "external_created_at": "2025-02-09T23:32:35.825Z",
+    "external_updated_at": "2025-05-05T03:30:34.922Z",
+    "raw_data": {
+      "id": "4649484a-917a-47d3-a5c6-7dc603e195f9",
+      "created_at": "2025-02-09T23:32:35.825Z",
+      "updated_at": "2025-05-05T03:30:34.922Z",
+      "name": "Kennedi Kiehn",
+      "emails": [
+        {
+          "email": "kennedi_kiehn50@yahoo.com",
+          "type": "HOME"
+        },
+        {
+          "email": "kennedi_kiehn89@hotmail.com",
+          "type": "OTHER"
+        }
+      ],
+      "telephones": [
+        {
+          "telephone": "(331) 893-7043",
+          "type": "HOME"
+        },
+        {
+          "telephone": "(359) 889-0868",
+          "type": "OTHER"
+        },
+        {
+          "telephone": "(860) 258-3412",
+          "type": "MOBILE"
+        }
+      ],
+      "billing_address": {
+        "address1": "80214 Ebba Track",
+        "address2": "Apt. 340",
+        "city": "North Jaiden",
+        "region_code": "NC",
+        "postal_code": "05232-6381",
+        "country_code": "US",
+        "country": "United States",
+        "region": "North Carolina"
+      },
+      "shipping_address": {
+        "address1": "928 Emmie Freeway",
+        "city": "New Dewayne",
+        "region_code": "PA",
+        "postal_code": "10509-6506",
+        "country_code": "US",
+        "country": "United States",
+        "region": "Pennsylvania"
+      },
+      "is_active": false,
+      "tax_exemption": "MEDICAL_ORG",
+      "currency": "ZMW",
+      "is_customer": true,
+      "company_name": "Mosciski, Predovic and Prosacco"
+    }
+  },
+  {
+    "external_id": "c713535a-0430-4d9a-93b1-2fccf05b0948",
+    "name": "Alexzander Welch",
+    "primary_email": "alexzander_welch@hotmail.com",
+    "primary_phone": null,
+    "is_supplier": false,
+    "external_created_at": "2021-06-21T22:25:47.225Z",
+    "external_updated_at": "2022-09-26T14:35:59.517Z",
+    "raw_data": {
+      "id": "c713535a-0430-4d9a-93b1-2fccf05b0948",
+      "created_at": "2021-06-21T22:25:47.225Z",
+      "updated_at": "2022-09-26T14:35:59.517Z",
+      "name": "Alexzander Welch",
+      "emails": [
+        {
+          "email": "alexzander_welch@hotmail.com",
+          "type": "OTHER"
+        }
+      ],
+      "telephones": [
+        {
+          "telephone": "(761) 434-9352",
+          "type": "OTHER"
+        },
+        {
+          "telephone": "(864) 257-8938",
+          "type": "WORK"
+        }
+      ],
+      "billing_address": {
+        "address1": "21986 Koch Camp",
+        "address2": "Suite 560",
+        "city": "Jackieville",
+        "region_code": "CA",
+        "postal_code": "11984-9845",
+        "country_code": "US",
+        "country": "United States",
+        "region": "California"
+      },
+      "shipping_address": {
+        "address1": "870 Muller Park",
+        "city": "West Julieport",
+        "region_code": "CA",
+        "postal_code": "37081-6477",
+        "country_code": "US",
+        "country": "United States",
+        "region": "California"
+      },
+      "is_active": false,
+      "tax_exemption": "CHARITABLE_ORG",
+      "currency": "BYN",
+      "is_customer": true,
+      "company_name": "Hirthe and Sons"
+    }
+  },
+  {
+    "external_id": "27a7bb60-6705-4fda-b6d4-c48e7e09956d",
+    "name": "Thad Barton",
+    "primary_email": "thad_barton57@yahoo.com",
+    "primary_phone": null,
+    "is_supplier": false,
+    "external_created_at": "2022-01-05T09:11:50.015Z",
+    "external_updated_at": "2024-05-09T08:32:10.743Z",
+    "raw_data": {
+      "id": "27a7bb60-6705-4fda-b6d4-c48e7e09956d",
+      "created_at": "2022-01-05T09:11:50.015Z",
+      "updated_at": "2024-05-09T08:32:10.743Z",
+      "name": "Thad Barton",
+      "emails": [
+        {
+          "email": "thad_barton57@yahoo.com",
+          "type": "HOME"
+        },
+        {
+          "email": "thad.barton@gmail.com",
+          "type": "OTHER"
+        }
+      ],
+      "telephones": [
+        {
+          "telephone": "(446) 869-4789",
+          "type": "HOME"
+        }
+      ],
+      "billing_address": {
+        "address1": "64371 E Walnut Street",
+        "address2": "Apt. 175",
+        "city": "Lake Elvera",
+        "region_code": "MS",
+        "postal_code": "42795",
+        "country_code": "US",
+        "country": "United States",
+        "region": "Mississippi"
+      },
+      "shipping_address": {
+        "address1": "160 Lemke Ville",
+        "city": "Fort Velva",
+        "region_code": "NJ",
+        "postal_code": "05462-9231",
+        "country_code": "US",
+        "country": "United States",
+        "region": "New Jersey"
+      },
+      "is_active": true,
+      "tax_exemption": "TRIBAL_GOV",
+      "currency": "XCD",
+      "is_customer": true,
+      "company_name": "Friesen Inc"
+    }
+  },
+  {
+    "external_id": "9a982d01-64b7-4453-8a7a-125da0e6507f",
+    "name": "Kieran Roob",
+    "primary_email": "kieran_roob@yahoo.com",
+    "primary_phone": null,
+    "is_supplier": false,
+    "external_created_at": "2024-04-28T08:42:22.096Z",
+    "external_updated_at": "2024-08-15T22:56:20.867Z",
+    "raw_data": {
+      "id": "9a982d01-64b7-4453-8a7a-125da0e6507f",
+      "created_at": "2024-04-28T08:42:22.096Z",
+      "updated_at": "2024-08-15T22:56:20.867Z",
+      "name": "Kieran Roob",
+      "emails": [
+        {
+          "email": "kieran_roob@yahoo.com",
+          "type": "HOME"
+        },
+        {
+          "email": "kieran.roob66@gmail.com",
+          "type": "WORK"
+        }
+      ],
+      "telephones": [
+        {
+          "telephone": "(245) 880-4728",
+          "type": "MOBILE"
+        },
+        {
+          "telephone": "(917) 403-3028",
+          "type": "FAX"
+        },
+        {
+          "telephone": "(467) 956-8062",
+          "type": "WORK"
+        }
+      ],
+      "billing_address": {
+        "address1": "8672 Waldo Forges",
+        "city": "Elroyville",
+        "region_code": "AL",
+        "postal_code": "05501",
+        "country_code": "US",
+        "country": "United States",
+        "region": "Alabama"
+      },
+      "shipping_address": {
+        "address1": "1862 Feeney Tunnel",
+        "city": "Alessandrohaven",
+        "region_code": "DE",
+        "postal_code": "89493",
+        "country_code": "US",
+        "country": "United States",
+        "region": "Delaware"
+      },
+      "is_active": true,
+      "tax_exemption": "REGION_GOV",
+      "currency": "UAH",
+      "is_customer": true,
+      "company_name": "Stark Inc"
+    }
+  },
+  {
+    "external_id": "0234752d-0b0f-479b-bffd-7c8072b566cb",
+    "name": "Velva Kirlin",
+    "primary_email": "velva.kirlin3@yahoo.com",
+    "primary_phone": null,
+    "is_supplier": false,
+    "external_created_at": "2022-08-08T20:15:54.139Z",
+    "external_updated_at": "2023-01-17T04:23:39.749Z",
+    "raw_data": {
+      "id": "0234752d-0b0f-479b-bffd-7c8072b566cb",
+      "created_at": "2022-08-08T20:15:54.139Z",
+      "updated_at": "2023-01-17T04:23:39.749Z",
+      "name": "Velva Kirlin",
+      "emails": [
+        {
+          "email": "velva.kirlin3@yahoo.com",
+          "type": "HOME"
+        },
+        {
+          "email": "velva_kirlin24@hotmail.com",
+          "type": "OTHER"
+        }
+      ],
+      "telephones": [
+        {
+          "telephone": "(920) 786-8626",
+          "type": "FAX"
+        },
+        {
+          "telephone": "(257) 420-6971",
+          "type": "MOBILE"
+        },
+        {
+          "telephone": "(288) 893-6960",
+          "type": "OTHER"
+        }
+      ],
+      "billing_address": {
+        "address1": "345 Cora Mills",
+        "address2": "Suite 987",
+        "city": "Escondido",
+        "region_code": "MD",
+        "postal_code": "22967",
+        "country_code": "US",
+        "country": "United States",
+        "region": "Maryland"
+      },
+      "shipping_address": {
+        "address1": "6170 Dach Station",
+        "city": "Cummeratatown",
+        "region_code": "PA",
+        "postal_code": "22571-9146",
+        "country_code": "US",
+        "country": "United States",
+        "region": "Pennsylvania"
+      },
+      "is_active": false,
+      "tax_exemption": "CHARITABLE_ORG",
+      "currency": "SYP",
+      "is_customer": true,
+      "company_name": "Jaskolski - Barton"
+    }
+  },
+  {
+    "external_id": "b143df28-3aee-45bb-9c9c-bab5249bda67",
+    "name": "Verner Grant",
+    "primary_email": "verner_grant44@gmail.com",
+    "primary_phone": null,
+    "is_supplier": false,
+    "external_created_at": "2022-05-08T18:52:30.455Z",
+    "external_updated_at": "2024-12-28T23:42:20.312Z",
+    "raw_data": {
+      "id": "b143df28-3aee-45bb-9c9c-bab5249bda67",
+      "created_at": "2022-05-08T18:52:30.455Z",
+      "updated_at": "2024-12-28T23:42:20.312Z",
+      "name": "Verner Grant",
+      "emails": [
+        {
+          "email": "verner_grant44@gmail.com",
+          "type": "HOME"
+        }
+      ],
+      "telephones": [
+        {
+          "telephone": "(842) 469-2282",
+          "type": "WORK"
+        }
+      ],
+      "billing_address": {
+        "address1": "214 Clair Grove",
+        "address2": "Suite 805",
+        "city": "Kalamazoo",
+        "region_code": "IA",
+        "postal_code": "36186-1560",
+        "country_code": "US",
+        "country": "United States",
+        "region": "Iowa"
+      },
+      "shipping_address": {
+        "address1": "386 Schowalter Brook",
+        "address2": "Apt. 658",
+        "city": "Salinas",
+        "region_code": "MD",
+        "postal_code": "24958-2056",
+        "country_code": "US",
+        "country": "United States",
+        "region": "Maryland"
+      },
+      "is_active": true,
+      "tax_exemption": "EDUCATIONAL_ORG",
+      "currency": "KES",
+      "is_customer": true,
+      "company_name": "Bartoletti Inc"
+    }
+  },
+  {
+    "external_id": "2ab5dd35-277a-4b6f-a410-4cd28be2fad7",
+    "name": "Sandy Stoltenberg",
+    "primary_email": "sandy.stoltenberg@hotmail.com",
+    "primary_phone": null,
+    "is_supplier": false,
+    "external_created_at": "2022-11-06T00:53:42.265Z",
+    "external_updated_at": "2023-01-26T22:14:10.146Z",
+    "raw_data": {
+      "id": "2ab5dd35-277a-4b6f-a410-4cd28be2fad7",
+      "created_at": "2022-11-06T00:53:42.265Z",
+      "updated_at": "2023-01-26T22:14:10.146Z",
+      "name": "Sandy Stoltenberg",
+      "emails": [
+        {
+          "email": "sandy.stoltenberg@hotmail.com",
+          "type": "HOME"
+        }
+      ],
+      "telephones": [
+        {
+          "telephone": "(503) 928-4607",
+          "type": "FAX"
+        },
+        {
+          "telephone": "(708) 762-2368",
+          "type": "HOME"
+        },
+        {
+          "telephone": "(200) 267-3250",
+          "type": "HOME"
+        }
+      ],
+      "billing_address": {
+        "address1": "12567 Birch Road",
+        "address2": "Apt. 273",
+        "city": "Buena Park",
+        "region_code": "NV",
+        "postal_code": "93905",
+        "country_code": "US",
+        "country": "United States",
+        "region": "Nevada"
+      },
+      "shipping_address": {
+        "address1": "656 County Line Road",
+        "address2": "Suite 786",
+        "city": "Breitenbergchester",
+        "region_code": "IA",
+        "postal_code": "01417",
+        "country_code": "US",
+        "country": "United States",
+        "region": "Iowa"
+      },
+      "is_active": true,
+      "tax_exemption": "TRIBAL_GOV",
+      "currency": "JOD",
+      "is_customer": true,
+      "company_name": "Klein LLC"
+    }
+  },
+  {
+    "external_id": "7f86dd72-1a30-4297-ab68-47255f64412b",
+    "name": "Allene Haley-Hermiston",
+    "primary_email": "allene_haley-hermiston65@gmail.com",
+    "primary_phone": null,
+    "is_supplier": false,
+    "external_created_at": "2025-05-10T23:09:43.449Z",
+    "external_updated_at": "2025-05-23T15:01:19.763Z",
+    "raw_data": {
+      "id": "7f86dd72-1a30-4297-ab68-47255f64412b",
+      "created_at": "2025-05-10T23:09:43.449Z",
+      "updated_at": "2025-05-23T15:01:19.763Z",
+      "name": "Allene Haley-Hermiston",
+      "emails": [
+        {
+          "email": "allene_haley-hermiston65@gmail.com",
+          "type": "WORK"
+        },
+        {
+          "email": "allene.haley-hermiston@hotmail.com",
+          "type": "OTHER"
+        },
+        {
+          "email": "allene_haley-hermiston79@hotmail.com",
+          "type": "HOME"
+        }
+      ],
+      "telephones": [
+        {
+          "telephone": "(241) 974-3405",
+          "type": "WORK"
+        },
+        {
+          "telephone": "(350) 562-1200",
+          "type": "MOBILE"
+        },
+        {
+          "telephone": "(517) 564-0492",
+          "type": "OTHER"
+        }
+      ],
+      "billing_address": {
+        "address1": "78462 Judah Throughway",
+        "city": "Lake Otilia",
+        "region_code": "DE",
+        "postal_code": "15549-9639",
+        "country_code": "US",
+        "country": "United States",
+        "region": "Delaware"
+      },
+      "shipping_address": {
+        "address1": "98751 Jade Pass",
+        "city": "West Damaris",
+        "region_code": "LA",
+        "postal_code": "33595",
+        "country_code": "US",
+        "country": "United States",
+        "region": "Louisiana"
+      },
+      "is_active": true,
+      "tax_exemption": "EDUCATIONAL_ORG",
+      "currency": "BYN",
+      "is_customer": true,
+      "company_name": "Lockman Group"
+    }
+  },
+  {
+    "external_id": "ddf4b7ab-dae7-4cb1-ac4c-3f9b76030541",
+    "name": "Erna OConner",
+    "primary_email": "erna_oconner98@yahoo.com",
+    "primary_phone": null,
+    "is_supplier": false,
+    "external_created_at": "2021-07-28T23:15:49.535Z",
+    "external_updated_at": "2024-05-02T07:18:27.068Z",
+    "raw_data": {
+      "id": "ddf4b7ab-dae7-4cb1-ac4c-3f9b76030541",
+      "created_at": "2021-07-28T23:15:49.535Z",
+      "updated_at": "2024-05-02T07:18:27.068Z",
+      "name": "Erna OConner",
+      "emails": [
+        {
+          "email": "erna_oconner98@yahoo.com",
+          "type": "OTHER"
+        }
+      ],
+      "telephones": [
+        {
+          "telephone": "(301) 638-5640",
+          "type": "HOME"
+        },
+        {
+          "telephone": "(916) 520-3420",
+          "type": "HOME"
+        },
+        {
+          "telephone": "(900) 499-7209",
+          "type": "FAX"
+        }
+      ],
+      "billing_address": {
+        "address1": "2932 Mills Ranch",
+        "address2": "Suite 338",
+        "city": "Kingberg",
+        "region_code": "ID",
+        "postal_code": "21631-4232",
+        "country_code": "US",
+        "country": "United States",
+        "region": "Idaho"
+      },
+      "shipping_address": {
+        "address1": "6614 Haley Neck",
+        "city": "Romaineport",
+        "region_code": "VA",
+        "postal_code": "01175-5492",
+        "country_code": "US",
+        "country": "United States",
+        "region": "Virginia"
+      },
+      "is_active": true,
+      "tax_exemption": "RELIGIOUS_ORG",
+      "currency": "RON",
+      "is_customer": true,
+      "company_name": "Wiza Group"
+    }
+  },
+  {
+    "external_id": "d2d4210a-cc96-4260-bb27-b9a236523657",
+    "name": "Elva Pollich",
+    "primary_email": "elva_pollich@gmail.com",
+    "primary_phone": null,
+    "is_supplier": false,
+    "external_created_at": "2023-08-14T10:27:26.340Z",
+    "external_updated_at": "2023-10-26T02:29:18.128Z",
+    "raw_data": {
+      "id": "d2d4210a-cc96-4260-bb27-b9a236523657",
+      "created_at": "2023-08-14T10:27:26.340Z",
+      "updated_at": "2023-10-26T02:29:18.128Z",
+      "name": "Elva Pollich",
+      "emails": [
+        {
+          "email": "elva_pollich@gmail.com",
+          "type": "OTHER"
+        }
+      ],
+      "telephones": [
+        {
+          "telephone": "(491) 822-0547",
+          "type": "FAX"
+        },
+        {
+          "telephone": "(615) 730-4099",
+          "type": "MOBILE"
+        },
+        {
+          "telephone": "(678) 471-5546",
+          "type": "WORK"
+        }
+      ],
+      "billing_address": {
+        "address1": "77400 Schmitt Locks",
+        "address2": "Suite 118",
+        "city": "West Shany",
+        "region_code": "CT",
+        "postal_code": "40327-6836",
+        "country_code": "US",
+        "country": "United States",
+        "region": "Connecticut"
+      },
+      "shipping_address": {
+        "address1": "871 West Road",
+        "address2": "Apt. 449",
+        "city": "Stokescester",
+        "region_code": "ID",
+        "postal_code": "19998-7388",
+        "country_code": "US",
+        "country": "United States",
+        "region": "Idaho"
+      },
+      "is_active": false,
+      "tax_exemption": "LOCAL_GOV",
+      "currency": "KES",
+      "is_customer": true,
+      "company_name": "Wiza - Berge"
+    }
+  },
+  {
+    "external_id": "6bb6b153-c261-43cf-8e9f-cf6f1a40baf7",
+    "name": "Bridget Barton",
+    "primary_email": "bridget.barton15@gmail.com",
+    "primary_phone": null,
+    "is_supplier": false,
+    "external_created_at": "2025-07-04T08:32:31.709Z",
+    "external_updated_at": "2025-10-15T13:21:17.129Z",
+    "raw_data": {
+      "id": "6bb6b153-c261-43cf-8e9f-cf6f1a40baf7",
+      "created_at": "2025-07-04T08:32:31.709Z",
+      "updated_at": "2025-10-15T13:21:17.129Z",
+      "name": "Bridget Barton",
+      "emails": [
+        {
+          "email": "bridget.barton15@gmail.com",
+          "type": "OTHER"
+        }
+      ],
+      "telephones": [
+        {
+          "telephone": "(501) 725-8872",
+          "type": "OTHER"
+        },
+        {
+          "telephone": "(559) 276-4400",
+          "type": "OTHER"
+        },
+        {
+          "telephone": "(655) 462-3750",
+          "type": "FAX"
+        }
+      ],
+      "billing_address": {
+        "address1": "985 Bosco Junctions",
+        "address2": "Suite 197",
+        "city": "Kundeland",
+        "region_code": "CO",
+        "postal_code": "69487-1190",
+        "country_code": "US",
+        "country": "United States",
+        "region": "Colorado"
+      },
+      "shipping_address": {
+        "address1": "9542 W Broadway Avenue",
+        "address2": "Suite 719",
+        "city": "Savanahfort",
+        "region_code": "IL",
+        "postal_code": "92235",
+        "country_code": "US",
+        "country": "United States",
+        "region": "Illinois"
+      },
+      "is_active": false,
+      "tax_exemption": "MEDICAL_ORG",
+      "currency": "MXN",
+      "is_customer": true,
+      "company_name": "Schiller, Feeney and Kautzer"
+    }
+  },
+  {
+    "external_id": "ae52f4ca-ec18-427e-aef1-1929568c02be",
+    "name": "Leonard Zulauf",
+    "primary_email": "leonard_zulauf@gmail.com",
+    "primary_phone": null,
+    "is_supplier": false,
+    "external_created_at": "2021-04-17T01:53:38.183Z",
+    "external_updated_at": "2025-03-27T13:43:31.459Z",
+    "raw_data": {
+      "id": "ae52f4ca-ec18-427e-aef1-1929568c02be",
+      "created_at": "2021-04-17T01:53:38.183Z",
+      "updated_at": "2025-03-27T13:43:31.459Z",
+      "name": "Leonard Zulauf",
+      "emails": [
+        {
+          "email": "leonard_zulauf@gmail.com",
+          "type": "WORK"
+        }
+      ],
+      "telephones": [
+        {
+          "telephone": "(480) 488-6830",
+          "type": "FAX"
+        }
+      ],
+      "billing_address": {
+        "address1": "1678 Ledner Creek",
+        "address2": "Apt. 243",
+        "city": "Mount Prospect",
+        "region_code": "IA",
+        "postal_code": "17493",
+        "country_code": "US",
+        "country": "United States",
+        "region": "Iowa"
+      },
+      "shipping_address": {
+        "address1": "17074 Marvin Rue",
+        "city": "Tampa",
+        "region_code": "AZ",
+        "postal_code": "31959",
+        "country_code": "US",
+        "country": "United States",
+        "region": "Arizona"
+      },
+      "is_active": false,
+      "tax_exemption": "REGION_GOV",
+      "currency": "PHP",
+      "is_customer": true,
+      "company_name": "Baumbach Group"
+    }
+  },
+  {
+    "external_id": "11ae9415-3b39-4451-9dff-b3d88103392e",
+    "name": "Laila Lynch",
+    "primary_email": "laila.lynch67@yahoo.com",
+    "primary_phone": null,
+    "is_supplier": false,
+    "external_created_at": "2024-04-25T02:23:18.868Z",
+    "external_updated_at": "2025-07-12T21:33:10.792Z",
+    "raw_data": {
+      "id": "11ae9415-3b39-4451-9dff-b3d88103392e",
+      "created_at": "2024-04-25T02:23:18.868Z",
+      "updated_at": "2025-07-12T21:33:10.792Z",
+      "name": "Laila Lynch",
+      "emails": [
+        {
+          "email": "laila.lynch67@yahoo.com",
+          "type": "HOME"
+        }
+      ],
+      "telephones": [
+        {
+          "telephone": "(791) 225-0202",
+          "type": "HOME"
+        },
+        {
+          "telephone": "(790) 507-7256",
+          "type": "WORK"
+        },
+        {
+          "telephone": "(972) 846-0842",
+          "type": "OTHER"
+        }
+      ],
+      "billing_address": {
+        "address1": "53994 Becker Bridge",
+        "address2": "Suite 296",
+        "city": "West Price",
+        "region_code": "IA",
+        "postal_code": "87739-2500",
+        "country_code": "US",
+        "country": "United States",
+        "region": "Iowa"
+      },
+      "shipping_address": {
+        "address1": "7341 Murray Summit",
+        "city": "Lilachester",
+        "region_code": "LA",
+        "postal_code": "18937",
+        "country_code": "US",
+        "country": "United States",
+        "region": "Louisiana"
+      },
+      "is_active": false,
+      "tax_exemption": "CHARITABLE_ORG",
+      "currency": "SGD",
+      "is_customer": true,
+      "company_name": "Ernser - Satterfield"
+    }
+  },
+  {
+    "external_id": "2dbd0d13-1362-431c-b3ee-8bd013aa651d",
+    "name": "Sylvia VonRueden",
+    "primary_email": "sylvia.vonrueden@hotmail.com",
+    "primary_phone": null,
+    "is_supplier": false,
+    "external_created_at": "2024-09-07T05:20:21.520Z",
+    "external_updated_at": "2025-02-15T21:31:17.029Z",
+    "raw_data": {
+      "id": "2dbd0d13-1362-431c-b3ee-8bd013aa651d",
+      "created_at": "2024-09-07T05:20:21.520Z",
+      "updated_at": "2025-02-15T21:31:17.029Z",
+      "name": "Sylvia VonRueden",
+      "emails": [
+        {
+          "email": "sylvia.vonrueden@hotmail.com",
+          "type": "HOME"
+        },
+        {
+          "email": "sylvia.vonrueden66@gmail.com",
+          "type": "OTHER"
+        }
+      ],
+      "telephones": [
+        {
+          "telephone": "(396) 422-1409",
+          "type": "MOBILE"
+        },
+        {
+          "telephone": "(597) 917-1286",
+          "type": "FAX"
+        }
+      ],
+      "billing_address": {
+        "address1": "28906 Collier Plain",
+        "city": "Bashirianstad",
+        "region_code": "MN",
+        "postal_code": "98788-5838",
+        "country_code": "US",
+        "country": "United States",
+        "region": "Minnesota"
+      },
+      "shipping_address": {
+        "address1": "6432 Caleigh Freeway",
+        "address2": "Apt. 656",
+        "city": "Hazlefield",
+        "region_code": "AR",
+        "postal_code": "14571",
+        "country_code": "US",
+        "country": "United States",
+        "region": "Arkansas"
+      },
+      "is_active": false,
+      "tax_exemption": "OTHER",
+      "currency": "BOB",
+      "is_customer": true,
+      "company_name": "Halvorson, Keeling and Nikolaus"
+    }
+  },
+  {
+    "external_id": "6b1ad5b7-d6de-404e-865b-0f1619787211",
+    "name": "Adriana Wiza",
+    "primary_email": "adriana.wiza@gmail.com",
+    "primary_phone": null,
+    "is_supplier": false,
+    "external_created_at": "2022-02-10T22:21:52.061Z",
+    "external_updated_at": "2024-03-19T19:21:16.820Z",
+    "raw_data": {
+      "id": "6b1ad5b7-d6de-404e-865b-0f1619787211",
+      "created_at": "2022-02-10T22:21:52.061Z",
+      "updated_at": "2024-03-19T19:21:16.820Z",
+      "name": "Adriana Wiza",
+      "emails": [
+        {
+          "email": "adriana.wiza@gmail.com",
+          "type": "WORK"
+        },
+        {
+          "email": "adriana_wiza@yahoo.com",
+          "type": "HOME"
+        }
+      ],
+      "telephones": [
+        {
+          "telephone": "(675) 442-3370",
+          "type": "OTHER"
+        },
+        {
+          "telephone": "(761) 849-3499",
+          "type": "WORK"
+        }
+      ],
+      "billing_address": {
+        "address1": "8929 Beech Close",
+        "city": "Port Walterbury",
+        "region_code": "RI",
+        "postal_code": "38872",
+        "country_code": "US",
+        "country": "United States",
+        "region": "Rhode Island"
+      },
+      "shipping_address": {
+        "address1": "2795 Orchard Drive",
+        "city": "Sydnieshire",
+        "region_code": "SC",
+        "postal_code": "41837",
+        "country_code": "US",
+        "country": "United States",
+        "region": "South Carolina"
+      },
+      "is_active": false,
+      "tax_exemption": "REGION_GOV",
+      "currency": "TTD",
+      "is_customer": true,
+      "company_name": "Hegmann Inc"
+    }
+  },
+  {
+    "external_id": "c596cf90-e3e2-42aa-aa56-74dcc7d9af5c",
+    "name": "Alyson Brakus",
+    "primary_email": "alyson_brakus@yahoo.com",
+    "primary_phone": null,
+    "is_supplier": false,
+    "external_created_at": "2021-05-04T19:58:27.135Z",
+    "external_updated_at": "2022-12-11T01:44:42.488Z",
+    "raw_data": {
+      "id": "c596cf90-e3e2-42aa-aa56-74dcc7d9af5c",
+      "created_at": "2021-05-04T19:58:27.135Z",
+      "updated_at": "2022-12-11T01:44:42.488Z",
+      "name": "Alyson Brakus",
+      "emails": [
+        {
+          "email": "alyson_brakus@yahoo.com",
+          "type": "HOME"
+        },
+        {
+          "email": "alyson.brakus@yahoo.com",
+          "type": "OTHER"
+        }
+      ],
+      "telephones": [
+        {
+          "telephone": "(573) 912-8835",
+          "type": "FAX"
+        }
+      ],
+      "billing_address": {
+        "address1": "8125 Jaiden Lock",
+        "address2": "Suite 152",
+        "city": "Fort Lorenz",
+        "region_code": "IL",
+        "postal_code": "33109-3472",
+        "country_code": "US",
+        "country": "United States",
+        "region": "Illinois"
+      },
+      "shipping_address": {
+        "address1": "5007 Runolfsson Crossroad",
+        "city": "Port Antwon",
+        "region_code": "OR",
+        "postal_code": "41563-7333",
+        "country_code": "US",
+        "country": "United States",
+        "region": "Oregon"
+      },
+      "is_active": false,
+      "tax_exemption": "TRIBAL_GOV",
+      "currency": "IRR",
+      "is_customer": true,
+      "company_name": "Yundt - Gerhold"
+    }
+  },
+  {
+    "external_id": "af546833-169d-419f-9857-f9c85427b50e",
+    "name": "Maxime Smitham",
+    "primary_email": "maxime_smitham53@hotmail.com",
+    "primary_phone": null,
+    "is_supplier": false,
+    "external_created_at": "2023-12-31T23:24:56.075Z",
+    "external_updated_at": "2025-10-04T12:45:04.057Z",
+    "raw_data": {
+      "id": "af546833-169d-419f-9857-f9c85427b50e",
+      "created_at": "2023-12-31T23:24:56.075Z",
+      "updated_at": "2025-10-04T12:45:04.057Z",
+      "name": "Maxime Smitham",
+      "emails": [
+        {
+          "email": "maxime_smitham53@hotmail.com",
+          "type": "WORK"
+        },
+        {
+          "email": "maxime_smitham@yahoo.com",
+          "type": "HOME"
+        }
+      ],
+      "telephones": [
+        {
+          "telephone": "(210) 387-3647",
+          "type": "WORK"
+        },
+        {
+          "telephone": "(739) 825-0406",
+          "type": "HOME"
+        }
+      ],
+      "billing_address": {
+        "address1": "88209 Mazie Roads",
+        "city": "Port Toy",
+        "region_code": "IA",
+        "postal_code": "36555-8906",
+        "country_code": "US",
+        "country": "United States",
+        "region": "Iowa"
+      },
+      "shipping_address": {
+        "address1": "42771 Franklin Avenue",
+        "city": "North Chance",
+        "region_code": "TX",
+        "postal_code": "48361",
+        "country_code": "US",
+        "country": "United States",
+        "region": "Texas"
+      },
+      "is_active": true,
+      "tax_exemption": "FEDERAL_GOV",
+      "currency": "KES",
+      "is_customer": true,
+      "company_name": "Davis and Sons"
+    }
+  },
+  {
+    "external_id": "39a79ae7-f542-4a3a-bb9c-5d47c34619d4",
+    "name": "Adolphus OReilly",
+    "primary_email": "adolphus.oreilly@gmail.com",
+    "primary_phone": null,
+    "is_supplier": false,
+    "external_created_at": "2024-10-29T03:01:38.910Z",
+    "external_updated_at": "2025-05-26T22:49:36.621Z",
+    "raw_data": {
+      "id": "39a79ae7-f542-4a3a-bb9c-5d47c34619d4",
+      "created_at": "2024-10-29T03:01:38.910Z",
+      "updated_at": "2025-05-26T22:49:36.621Z",
+      "name": "Adolphus OReilly",
+      "emails": [
+        {
+          "email": "adolphus.oreilly@gmail.com",
+          "type": "WORK"
+        },
+        {
+          "email": "adolphus.oreilly3@gmail.com",
+          "type": "HOME"
+        },
+        {
+          "email": "adolphus_oreilly39@hotmail.com",
+          "type": "OTHER"
+        }
+      ],
+      "telephones": [
+        {
+          "telephone": "(690) 382-6561",
+          "type": "FAX"
+        },
+        {
+          "telephone": "(954) 381-5912",
+          "type": "HOME"
+        }
+      ],
+      "billing_address": {
+        "address1": "367 Wyman Rapid",
+        "city": "Port Danteton",
+        "region_code": "CT",
+        "postal_code": "40594-9958",
+        "country_code": "US",
+        "country": "United States",
+        "region": "Connecticut"
+      },
+      "shipping_address": {
+        "address1": "3638 Robbie Stravenue",
+        "city": "Dietrichstead",
+        "region_code": "SD",
+        "postal_code": "40814",
+        "country_code": "US",
+        "country": "United States",
+        "region": "South Dakota"
+      },
+      "is_active": true,
+      "tax_exemption": "FOREIGN",
+      "currency": "LAK",
+      "is_customer": true,
+      "company_name": "Ryan, Watsica and Dare"
+    }
+  }
+]

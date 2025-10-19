@@ -4,7 +4,10 @@
     {
       "src": "config/wsgi.py",
       "use": "@vercel/python",
-      "config": { "maxLambdaSize": "15mb" }
+      "config": { 
+        "maxLambdaSize": "15mb",
+        "runtime": "python3.12"
+      }
     }
   ],
   "routes": [
@@ -17,7 +20,5 @@
       "dest": "config/wsgi.py"
     }
   ],
-  "env": {
-    "DJANGO_SETTINGS_MODULE": "config.settings"
-  }
+  "installCommand": "pip install -r requirements-prod.txt"
 }

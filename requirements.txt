@@ -15,8 +15,11 @@ dagster-pipes==1.11.15
 dagster-postgres==0.27.15
 dagster-webserver==1.11.15
 dagster_shared==1.11.15
+dj-database-url==3.0.1
 Django==5.2.7
+django-cors-headers==4.9.0
 django-htmx==1.26.0
+djangorestframework==3.16.1
 docstring_parser==0.17.0
 filelock==3.20.0
 fsspec==2025.9.0
@@ -27,6 +30,7 @@ graphql-relay==3.2.0
 greenlet==3.2.4
 grpcio==1.75.1
 grpcio-health-checking==1.75.1
+gunicorn==23.0.0
 h11==0.16.0
 httptools==0.7.1
 humanfriendly==10.0
@@ -77,6 +81,5 @@ uvloop==0.22.1
 watchdog==6.0.0
 watchfiles==1.1.1
 websockets==15.0.1
+whitenoise==6.11.0
 yarl==1.22.0
-dj-database-url==3.0.1
-gunicorn==23.0.0

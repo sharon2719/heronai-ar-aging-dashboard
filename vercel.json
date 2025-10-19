@@ -19,6 +19,5 @@
       "src": "/(.*)",
       "dest": "config/wsgi.py"
     }
-  ],
-  "installCommand": "pip install -r requirements-prod.txt"
+  ]
 }

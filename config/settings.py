@@ -25,12 +25,18 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = config('DJANGO_SECRET_KEY', default='^*=m#5!eq$0@eg5#m1ae6gj+ot%37e!3nex@yjb+gg&g3^ba9n')
+SECRET_KEY = os.environ.get('SECRET_KEY', config('DJANGO_SECRET_KEY', default='^*=m#5!eq$0@eg5#m1ae6gj+ot%37e!3nex@yjb+gg&g3^ba9n'))
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = config('DJANGO_DEBUG', default=False, cast=bool)
+DEBUG = os.environ.get('DEBUG', config('DJANGO_DEBUG', default='False')) == 'True'
 
-ALLOWED_HOSTS = config('DJANGO_ALLOWED_HOSTS', default='localhost,127.0.0.1,0.0.0.0', cast=Csv())
+# Updated ALLOWED_HOSTS for Render
+ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', config('DJANGO_ALLOWED_HOSTS', default='localhost,127.0.0.1,0.0.0.0')).split(',')
+
+# Add render.com domain if in production
+RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
+if RENDER_EXTERNAL_HOSTNAME:
+    ALLOWED_HOSTS.append(RENDER_EXTERNAL_HOSTNAME)
 
 
 # Application definition
@@ -49,8 +55,8 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
-    'whitenoise.middleware.WhiteNoiseMiddleware',  
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',  
     'corsheaders.middleware.CorsMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -85,10 +91,10 @@ WSGI_APPLICATION = 'config.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
-DATABASE_URL = config('DATABASE_URL', default=None)
+DATABASE_URL = os.environ.get('DATABASE_URL', config('DATABASE_URL', default=None))
 
 if DATABASE_URL:
-    # Use DigitalOcean managed database
+    # Use managed database (Render, Neon, etc.)
     DATABASES = {
         'default': dj_database_url.config(
             default=DATABASE_URL,
@@ -108,9 +114,10 @@ else:
             'PORT': config('DB_PORT', default='5432'),
         }
     }
+
 # Unified.to API Credentials
-UNIFIED_API_KEY = config('UNIFIED_API_KEY', default='')
-UNIFIED_CONNECTION_ID = config('UNIFIED_CONNECTION_ID', default='')
+UNIFIED_API_KEY = os.environ.get('UNIFIED_API_KEY', config('UNIFIED_API_KEY', default=''))
+UNIFIED_CONNECTION_ID = os.environ.get('UNIFIED_CONNECTION_ID', config('UNIFIED_CONNECTION_ID', default=''))
 
 # CORS Configuration
 CORS_ALLOWED_ORIGINS = config('CORS_ALLOWED_ORIGINS', default='http://localhost:3000', cast=Csv())
@@ -158,7 +165,11 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-STATICFILES_DIRS = [BASE_DIR / 'static']
+
+# Only add static directory if it exists (avoid errors during collectstatic)
+if os.path.isdir(os.path.join(BASE_DIR, 'static')):
+    STATICFILES_DIRS = [BASE_DIR / 'static']
+
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 
@@ -167,4 +178,11 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-
+# Security settings for production
+if not DEBUG:
+    SECURE_SSL_REDIRECT = True
+    SESSION_COOKIE_SECURE = True
+    CSRF_COOKIE_SECURE = True
+    SECURE_BROWSER_XSS_FILTER = True
+    SECURE_CONTENT_TYPE_NOSNIFF = True
+    X_FRAME_OPTIONS = 'DENY'

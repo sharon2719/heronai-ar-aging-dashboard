@@ -3,7 +3,7 @@
   "routes": [
     {
       "src": "/",
-      "dest": "/base.html"
+      "dest": "/dashboard.html"
     },
     {
       "src": "/(.*)",

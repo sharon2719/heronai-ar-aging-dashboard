@@ -12,11 +12,11 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 
 import os
 from pathlib import Path
-from dotenv import load_dotenv
+from decouple import config, Csv
 import dj_database_url
+from dotenv import load_dotenv
 
 load_dotenv()
-
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -25,12 +25,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.getenv('DJANGO_SECRET_KEY', os.getenv('SECRET_KEY', 'fallback-secret-key'))
+SECRET_KEY = config('DJANGO_SECRET_KEY', default='^*=m#5!eq$0@eg5#m1ae6gj+ot%37e!3nex@yjb+gg&g3^ba9n')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.getenv('DJANGO_DEBUG', os.getenv('DEBUG', 'True')).lower() == 'true'
+DEBUG = config('DJANGO_DEBUG', default=False, cast=bool)
 
-ALLOWED_HOSTS = ['*']  
+ALLOWED_HOSTS = config('DJANGO_ALLOWED_HOSTS', default='localhost,127.0.0.1,0.0.0.0', cast=Csv())
 
 
 # Application definition
@@ -85,11 +85,13 @@ WSGI_APPLICATION = 'config.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
-if os.getenv('DATABASE_URL'):
+DATABASE_URL = config('DATABASE_URL', default=None)
+
+if DATABASE_URL:
     # Use DigitalOcean managed database
     DATABASES = {
         'default': dj_database_url.config(
-            default=os.getenv('DATABASE_URL'),
+            default=DATABASE_URL,
             conn_max_age=600,
             conn_health_checks=True,
         )
@@ -99,20 +101,19 @@ else:
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.postgresql',
-            'NAME': os.getenv('DB_NAME', 'heronai_ar_dashboard'),
-            'USER': os.getenv('DB_USER', 'heronai_dash_user'),
-            'PASSWORD': os.getenv('DB_PASSWORD'),
-            'HOST': os.getenv('DB_HOST', 'localhost'),
-            'PORT': os.getenv('DB_PORT', '5432'),
+            'NAME': config('DB_NAME', default='heronai_ar_dashboard'),
+            'USER': config('DB_USER', default='heronai_dash_user'),
+            'PASSWORD': config('DB_PASSWORD', default=''),
+            'HOST': config('DB_HOST', default='localhost'),
+            'PORT': config('DB_PORT', default='5432'),
         }
     }
-
 # Unified.to API Credentials
-UNIFIED_API_KEY = os.getenv('UNIFIED_API_KEY')
-UNIFIED_CONNECTION_ID = os.getenv('UNIFIED_CONNECTION_ID')
+UNIFIED_API_KEY = config('UNIFIED_API_KEY', default='')
+UNIFIED_CONNECTION_ID = config('UNIFIED_CONNECTION_ID', default='')
 
 # CORS Configuration
-CORS_ALLOWED_ORIGINS = os.getenv('CORS_ALLOWED_ORIGINS', 'http://localhost:3000').split(',')
+CORS_ALLOWED_ORIGINS = config('CORS_ALLOWED_ORIGINS', default='http://localhost:3000', cast=Csv())
 
 # REST Framework Configuration
 REST_FRAMEWORK = {
@@ -167,22 +168,3 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
-# Health Check
-def health_check(request):
-    from django.http import JsonResponse
-    from django.db import connections
-    from django.utils import timezone
-    
-    try:
-        conn = connections['default']
-        conn.ensure_connection()
-        return JsonResponse({
-            'status': 'healthy',
-            'database': 'connected',
-            'timestamp': timezone.now().isoformat()
-        })
-    except Exception as e:
-        return JsonResponse({
-            'status': 'unhealthy',
-            'error': str(e)
-        }, status=500)

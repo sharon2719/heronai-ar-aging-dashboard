@@ -15,15 +15,4 @@ urlpatterns = [
     path('api/invoice-details/<int:customer_id>/', views.api_invoice_details, name='api_invoice_details'),
     path('api/summary-stats/', views.api_summary_stats, name='api_summary_stats'),
     path('api/risk-dashboard/', views.api_risk_dashboard, name='api_risk_dashboard'),
-
- # Demo mode endpoints
-    path('demo/', views.demo_mode_page, name='demo_mode'),
-    path('demo/toggle/', views.demo_toggle, name='demo_toggle'),
-    path('demo/metrics/', views.demo_metrics, name='demo_metrics'),
-    path('demo/new-invoices/', views.demo_new_invoices, name='demo_new_invoices'),
-    path('demo/invoice-paid/', views.demo_invoice_paid, name='demo_invoice_paid'),
-    path('demo/invoice-aging/', views.demo_invoice_aging, name='demo_invoice_aging'),
-    path('demo/major-overdue/', views.demo_major_overdue, name='demo_major_overdue'),
-    path('demo/high-risk-alert/', views.demo_high_risk_alert, name='demo_high_risk_alert'),
-    path('demo/reset/', views.demo_reset, name='demo_reset'),
 ]

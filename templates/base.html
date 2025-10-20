@@ -641,8 +641,8 @@
         <!-- Sidebar -->
         <aside class="sidebar">
             <div class="sidebar-brand">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 2C6.47 2 2 6.47 2 12C2 17.53 6.47 22 12 22C17.53 22 22 17.53 22 12C22 6.47 17.53 2 12 2ZM16.3 16.3C15.91 16.69 15.28 16.69 14.89 16.3L12 13.41L9.11 16.3C8.72 16.69 8.09 16.69 7.7 16.3C7.31 15.91 7.31 15.28 7.7 14.89L10.59 12L7.7 9.11C7.31 8.72 7.31 8.09 7.7 7.7C8.09 7.31 8.72 7.31 9.11 7.7L12 10.59L14.89 7.7C15.28 7.31 15.91 7.31 16.3 7.7C16.69 8.09 16.69 8.72 16.3 9.11L13.41 12L16.3 14.89C16.69 15.28 16.69 15.91 16.3 16.3Z"/>
                 </svg>
                 <span class="sidebar-brand-text">Heron AI</span>
             </div>
@@ -716,41 +716,31 @@
             </div>
 
             <div class="sidebar-section" style="margin-top: auto;">
-    <div class="sidebar-section-title">
-        ⚙️ Settings
-    </div>
-    <ul class="sidebar-nav">
-        <li>
-            <a href="{% url 'ar_dashboard:demo_mode' %}" class="{% if request.resolver_match.url_name == 'demo_mode' %}active{% endif %}">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <circle cx="12" cy="12" r="10"/>
-                    <polygon points="10 8 16 12 10 16 10 8"/>
-                </svg>
-                Demo Control
-                <span class="sidebar-badge" style="background: #F59E0B;">DEMO</span>
-            </a>
-        </li>
-        <li>
-            <a href="#">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
-                    <polyline points="3.27 6.96 12 12.01 20.73 6.96"/>
-                    <line x1="12" y1="22.08" x2="12" y2="12"/>
-                </svg>
-                Data Connections
-            </a>
-        </li>
-        <li>
-            <a href="#" onclick="openPreferencesModal(event)">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <circle cx="12" cy="12" r="3"/>
-                    <path d="M12 1v6m0 6v6M5.64 5.64l4.24 4.24m4.24 4.24l4.24 4.24M1 12h6m6 0h6M5.64 18.36l4.24-4.24m4.24-4.24l4.24-4.24"/>
-                </svg>
-                Preferences
-            </a>
-        </li>
-    </ul>
-</div>
+                <div class="sidebar-section-title">
+                    ⚙️ Settings
+                </div>
+                <ul class="sidebar-nav">
+                    <li>
+                        <a href="#">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+                                <polyline points="3.27 6.96 12 12.01 20.73 6.96"/>
+                                <line x1="12" y1="22.08" x2="12" y2="12"/>
+                            </svg>
+                            Data Connections
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" onclick="openPreferencesModal(event)">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="3"/>
+                                <path d="M12 1v6m0 6v6M5.64 5.64l4.24 4.24m4.24 4.24l4.24 4.24M1 12h6m6 0h6M5.64 18.36l4.24-4.24m4.24-4.24l4.24-4.24"/>
+                            </svg>
+                            Preferences
+                        </a>
+                    </li>
+                </ul>
+            </div>
         </aside>
 
         <!-- Main Content -->
@@ -921,21 +911,6 @@
             savePreference('theme', theme);
         }
 
-        // Demo Mode Management
-        function toggleDemoMode(enabled) {
-            localStorage.setItem('demoMode', enabled ? 'true' : 'false');
-            if (enabled) {
-                console.log('✓ Demo mode enabled. Open /ar/demo/ in another window.');
-            } else {
-                console.log('✗ Demo mode disabled.');
-            }
-            savePreference('demoMode', enabled);
-        }
-
-        function isDemoModeActive() {
-            return localStorage.getItem('demoMode') === 'true';
-        }
-
         function openPreferencesModal(event) {
             if (event) event.preventDefault();
             document.getElementById('preferencesModal').classList.add('active');
@@ -951,13 +926,11 @@
             const emailAlerts = localStorage.getItem('emailAlerts') !== 'false';
             const inAppNotifications = localStorage.getItem('inAppNotifications') !== 'false';
             const autoRefresh = localStorage.getItem('autoRefresh') !== 'false';
-            const demoMode = localStorage.getItem('demoMode') === 'true';
 
             document.getElementById(`theme-${theme}`).checked = true;
             document.getElementById('emailAlerts').checked = emailAlerts;
             document.getElementById('inAppNotifications').checked = inAppNotifications;
             document.getElementById('autoRefresh').checked = autoRefresh;
-            document.getElementById('demoMode').checked = demoMode;
         }
 
         function savePreference(key, value) {
@@ -983,3 +956,5 @@
             }
         });
     </script>
+</body>
+</html>

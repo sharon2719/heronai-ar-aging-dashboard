@@ -3,7 +3,7 @@ organization: heronai-dashboard
 branch_deployments:
   main: prod
 
-deployments:
-  - name: prod
-    code_location:
+locations:
+  - location_name: heronai_ar_dashboard
+    code_source:
       package_name: dagster_pipeline

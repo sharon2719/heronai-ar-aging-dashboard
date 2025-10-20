@@ -1,4 +1,4 @@
-name: Deploy Dagster to Dagster Cloud
+name: Deploy Dagster Cloud (Full Deployment)
 
 on:
   push:
@@ -9,28 +9,24 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
       - name: Set up Python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
-          python-version: "3.11"
+          python-version: "3.10"
 
-      - name: Install pip, wheel, setuptools
+      - name: Install dependencies
         run: |
-          python -m pip install --upgrade pip setuptools wheel
-
-      - name: Install requirements
-        run: |
+          python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: Install dagster-cloud CLI
-        run: |
-          pip install dagster-cloud
-
-      - name: Deploy to Dagster Cloud (serverless)
+      - name: Deploy to Dagster Cloud
+        uses: dagster-io/dagster-cloud-action/actions/build_deploy_python_executable@v0.1
         env:
           DAGSTER_CLOUD_API_TOKEN: ${{ secrets.DAGSTER_CLOUD_API_TOKEN }}
-        run: |
-          # run the serverless deploy; this uses your dagster_cloud.yaml
-          dagster-cloud serverless deploy --non-interactive
+        with:
+          dagster_cloud_file: dagster_cloud.yaml
+          python_version: "3.10"
+          deployment: "prod"

@@ -5,5 +5,3 @@ locations:
       attribute: defs
     build:
       directory: .
-      python_version: "3.10"
-      requirements_txt: requirements.txt

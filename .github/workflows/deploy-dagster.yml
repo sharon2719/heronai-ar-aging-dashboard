@@ -1,4 +1,4 @@
-name: Deploy Dagster Cloud (Full Deployment)
+name: Deploy Dagster Cloud
 
 on:
   push:
@@ -17,5 +17,8 @@ jobs:
         with:
           dagster_cloud_file: dagster_cloud.yaml
           deployment: prod
+          force_rebuild_deps: true  # This forces a clean rebuild
         env:
           DAGSTER_CLOUD_API_TOKEN: ${{ secrets.DAGSTER_CLOUD_API_TOKEN }}
+          DAGSTER_CLOUD_URL: http://heronai-dashboard.dagster.cloud
+          ENABLE_FAST_DEPLOYS: 'true'

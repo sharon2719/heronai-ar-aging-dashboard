@@ -1,0 +1,29 @@
+[project]
+name = "heronai-ar-dashboard"
+version = "0.1.0"
+description = "Dagster data pipeline for the HeronAI AR Dashboard"
+readme = "README.md"
+requires-python = ">=3.9"
+
+# Dependencies are minimal here since you're using requirements.txt
+dependencies = [
+    "dagster",
+    "dagit",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest",
+    "black",
+    "ruff",
+]
+
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = ["dagster_pipeline"]
+
+[tool.dagster]
+module_name = "dagster_pipeline.definitions"

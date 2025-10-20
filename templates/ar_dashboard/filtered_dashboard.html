@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AR Dashboard with Filters</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.4.3/echarts.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
     <style>
         * {
             margin: 0;
@@ -114,6 +116,7 @@
         .filter-buttons {
             display: flex;
             gap: 8px;
+            flex-wrap: wrap;
         }
 
         .btn {
@@ -149,6 +152,11 @@
         .btn-secondary:hover {
             background: var(--border-color);
             color: var(--text-primary);
+        }
+
+        .btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
         }
 
         .active-filters {
@@ -274,6 +282,30 @@
             to { transform: rotate(360deg); }
         }
 
+        .export-notification {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: var(--success);
+            color: white;
+            padding: 12px 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            z-index: 1000;
+            animation: slideIn 0.3s ease;
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateX(400px);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
         @media (max-width: 1024px) {
             .widget-grid {
                 grid-template-columns: 1fr;
@@ -325,34 +357,18 @@
                     <input type="text" id="customerSearch" class="filter-input" placeholder="Search customer...">
                 </div>
             </div>
-<div class="dashboard-header-actions" style="margin-bottom: 16px;">
-    <a href="{% url 'ar_dashboard:widget_dashboard' %}" class="btn btn-secondary">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <rect x="3" y="3" width="7" height="7"/>
-            <rect x="14" y="3" width="7" height="7"/>
-            <rect x="14" y="14" width="7" height="7"/>
-            <rect x="3" y="14" width="7" height="7"/>
-        </svg>
-        Interactive Dashboard
-    </a>
-    <a href="{% url 'ar_dashboard:filtered_dashboard' %}" class="btn btn-primary">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
-        </svg>
-        Filtered Dashboard
-    </a>
-</div>
+
             <div class="filter-buttons">
                 <button class="btn btn-primary" onclick="applyFilters()">Apply Filters</button>
                 <button class="btn btn-secondary" onclick="resetFilters()">Reset</button>
-                <button class="btn btn-secondary" onclick="exportToCSV()">📥 Export CSV</button>
-                <button class="btn btn-secondary" onclick="exportToPDF()">📄 Export PDF</button>
+                <button class="btn btn-secondary" onclick="exportToCSV()" id="csvBtn">📥 Export CSV</button>
+                <button class="btn btn-secondary" onclick="exportToPDF()" id="pdfBtn">📄 Export PDF</button>
             </div>
 
             <div class="active-filters" id="activeFilters"></div>
         </div>
 
-        <div class="widget-grid">
+        <div class="widget-grid" id="dashboardContent">
             <div class="widget">
                 <div class="widget-header">KPI Summary</div>
                 <div class="widget-content" id="kpiContent">
@@ -378,6 +394,26 @@
 
     <script>
         const API_BASE = '/ar/api';
+        
+        // Store current data for exports
+        let currentData = {
+            summary: null,
+            aging: null,
+            customers: null,
+            filters: {}
+        };
+
+        function showNotification(message) {
+            const notification = document.createElement('div');
+            notification.className = 'export-notification';
+            notification.textContent = message;
+            document.body.appendChild(notification);
+            
+            setTimeout(() => {
+                notification.style.opacity = '0';
+                setTimeout(() => notification.remove(), 300);
+            }, 3000);
+        }
 
         function applyFilters() {
             const filters = {
@@ -386,6 +422,7 @@
                 customerSearch: document.getElementById('customerSearch').value
             };
 
+            currentData.filters = filters;
             updateActiveFiltersDisplay(filters);
             loadDashboardData(filters);
         }
@@ -395,6 +432,7 @@
             document.getElementById('minAmount').value = '0';
             document.getElementById('customerSearch').value = '';
             document.getElementById('activeFilters').innerHTML = '';
+            currentData.filters = {};
             loadDashboardData({});
         }
 
@@ -445,6 +483,7 @@
             fetch(`${API_BASE}/summary-stats/`)
                 .then(r => r.json())
                 .then(data => {
+                    currentData.summary = data;
                     const overdueClass = data.overdue_percentage > 40 ? 'danger' : data.overdue_percentage > 20 ? 'warning' : '';
                     const riskClass = data.at_risk_customers > 0 ? 'danger' : '';
                     
@@ -491,6 +530,8 @@
                         distribution = filtered;
                     }
 
+                    currentData.aging = distribution;
+
                     const chart = echarts.init(document.getElementById('agingChart'));
                     chart.setOption({
                         tooltip: { 
@@ -536,6 +577,7 @@
                         customers = customers.filter(c => c.customer.toLowerCase().includes(search));
                     }
 
+                    currentData.customers = customers;
                     const top10 = customers.slice(0, 10);
 
                     const chart = echarts.init(document.getElementById('customersChart'));
@@ -582,8 +624,259 @@
                 .catch(err => console.error('Error loading customer breakdown:', err));
         }
 
-        // Initialize dashboard
-        loadDashboardData({});
+        // CSV Export Function
+        function exportToCSV() {
+            if (!currentData.customers || currentData.customers.length === 0) {
+                alert('No data to export. Please wait for data to load.');
+                return;
+            }
+
+            const btn = document.getElementById('csvBtn');
+            btn.disabled = true;
+            btn.textContent = 'Exporting...';
+
+            try {
+                const csvRows = [];
+                
+                // Add header with filters info
+                csvRows.push(['AR Dashboard Export']);
+                csvRows.push(['Generated:', new Date().toLocaleString()]);
+                
+                if (Object.keys(currentData.filters).length > 0) {
+                    csvRows.push(['Filters Applied:']);
+                    if (currentData.filters.agingBucket) {
+                        csvRows.push(['Aging Bucket:', currentData.filters.agingBucket]);
+                    }
+                    if (currentData.filters.minAmount > 0) {
+                        csvRows.push(['Minimum Amount:', `$${currentData.filters.minAmount}`]);
+                    }
+                    if (currentData.filters.customerSearch) {
+                        csvRows.push(['Customer Search:', currentData.filters.customerSearch]);
+                    }
+                }
+                csvRows.push([]);
+
+                // Summary Stats
+                if (currentData.summary) {
+                    csvRows.push(['SUMMARY STATISTICS']);
+                    csvRows.push(['Total AR', `$${currentData.summary.total_ar.toFixed(2)}`]);
+                    csvRows.push(['Overdue Percentage', `${currentData.summary.overdue_percentage.toFixed(2)}%`]);
+                    csvRows.push(['Total Invoices', currentData.summary.total_invoices]);
+                    csvRows.push(['At-Risk Customers', currentData.summary.at_risk_customers]);
+                    csvRows.push([]);
+                }
+
+                // Aging Distribution
+                if (currentData.aging) {
+                    csvRows.push(['AGING DISTRIBUTION']);
+                    csvRows.push(['Bucket', 'Amount']);
+                    Object.entries(currentData.aging).forEach(([bucket, amount]) => {
+                        csvRows.push([bucket, `$${amount.toFixed(2)}`]);
+                    });
+                    csvRows.push([]);
+                }
+
+                // Customer Details
+                csvRows.push(['CUSTOMER BREAKDOWN']);
+                csvRows.push(['Customer', 'Total Outstanding', 'Current', '1-30 Days', '31-60 Days', '61-90 Days', '91-120 Days', '120+ Days']);
+                
+                currentData.customers.forEach(customer => {
+                    csvRows.push([
+                        customer.customer,
+                        `$${customer.total_outstanding.toFixed(2)}`,
+                        `$${(customer.current || 0).toFixed(2)}`,
+                        `$${(customer.days_1_30 || 0).toFixed(2)}`,
+                        `$${(customer.days_31_60 || 0).toFixed(2)}`,
+                        `$${(customer.days_61_90 || 0).toFixed(2)}`,
+                        `$${(customer.days_91_120 || 0).toFixed(2)}`,
+                        `$${(customer.days_120_plus || 0).toFixed(2)}`
+                    ]);
+                });
+
+                // Convert to CSV string
+                const csvContent = csvRows.map(row => 
+                    row.map(cell => {
+                        const cellStr = String(cell);
+                        return cellStr.includes(',') ? `"${cellStr}"` : cellStr;
+                    }).join(',')
+                ).join('\n');
+
+                // Download
+                const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+                const link = document.createElement('a');
+                const url = URL.createObjectURL(blob);
+                link.setAttribute('href', url);
+                link.setAttribute('download', `ar_dashboard_${new Date().toISOString().split('T')[0]}.csv`);
+                link.style.visibility = 'hidden';
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+
+                showNotification('✓ CSV exported successfully!');
+            } catch (error) {
+                console.error('CSV Export Error:', error);
+                alert('Error exporting CSV. Please try again.');
+            } finally {
+                btn.disabled = false;
+                btn.textContent = '📥 Export CSV';
+            }
+        }
+
+        // PDF Export Function
+        async function exportToPDF() {
+            const btn = document.getElementById('pdfBtn');
+            btn.disabled = true;
+            btn.textContent = 'Generating PDF...';
+
+            try {
+                const { jsPDF } = window.jspdf;
+                const pdf = new jsPDF('p', 'mm', 'a4');
+                const pageWidth = pdf.internal.pageSize.getWidth();
+                const pageHeight = pdf.internal.pageSize.getHeight();
+                let yPosition = 20;
+
+                // Title
+                pdf.setFontSize(20);
+                pdf.setFont(undefined, 'bold');
+                pdf.text('AR Dashboard Report', 15, yPosition);
+                yPosition += 8;
+
+                // Date
+                pdf.setFontSize(10);
+                pdf.setFont(undefined, 'normal');
+                pdf.setTextColor(100);
+                pdf.text(`Generated: ${new Date().toLocaleString()}`, 15, yPosition);
+                yPosition += 10;
+
+                // Filters
+                if (Object.keys(currentData.filters).length > 0) {
+                    pdf.setFontSize(11);
+                    pdf.setFont(undefined, 'bold');
+                    pdf.setTextColor(0);
+                    pdf.text('Applied Filters:', 15, yPosition);
+                    yPosition += 6;
+                    
+                    pdf.setFontSize(9);
+                    pdf.setFont(undefined, 'normal');
+                    if (currentData.filters.agingBucket) {
+                        pdf.text(`• Aging Bucket: ${currentData.filters.agingBucket}`, 20, yPosition);
+                        yPosition += 5;
+                    }
+                    if (currentData.filters.minAmount > 0) {
+                        pdf.text(`• Minimum Amount: $${currentData.filters.minAmount.toLocaleString()}`, 20, yPosition);
+                        yPosition += 5;
+                    }
+                    if (currentData.filters.customerSearch) {
+                        pdf.text(`• Customer: ${currentData.filters.customerSearch}`, 20, yPosition);
+                        yPosition += 5;
+                    }
+                    yPosition += 5;
+                }
+
+                // Summary Stats
+                if (currentData.summary) {
+                    pdf.setFontSize(12);
+                    pdf.setFont(undefined, 'bold');
+                    pdf.text('Summary Statistics', 15, yPosition);
+                    yPosition += 7;
+
+                    pdf.setFontSize(10);
+                    pdf.setFont(undefined, 'normal');
+                    const stats = [
+                        ['Total AR:', `$${currentData.summary.total_ar.toLocaleString(undefined, {maximumFractionDigits: 0})}`],
+                        ['Overdue %:', `${currentData.summary.overdue_percentage.toFixed(1)}%`],
+                        ['Total Invoices:', currentData.summary.total_invoices.toString()],
+                        ['At-Risk Customers:', currentData.summary.at_risk_customers.toString()]
+                    ];
+
+                    stats.forEach(([label, value]) => {
+                        pdf.text(label, 20, yPosition);
+                        pdf.text(value, 80, yPosition);
+                        yPosition += 6;
+                    });
+                    yPosition += 5;
+                }
+
+                // Aging Distribution
+                if (currentData.aging) {
+                    if (yPosition > pageHeight - 60) {
+                        pdf.addPage();
+                        yPosition = 20;
+                    }
+
+                    pdf.setFontSize(12);
+                    pdf.setFont(undefined, 'bold');
+                    pdf.text('Aging Distribution', 15, yPosition);
+                    yPosition += 7;
+
+                    pdf.setFontSize(10);
+                    pdf.setFont(undefined, 'normal');
+                    Object.entries(currentData.aging).forEach(([bucket, amount]) => {
+                        pdf.text(bucket, 20, yPosition);
+                        pdf.text(`$${amount.toLocaleString(undefined, {maximumFractionDigits: 2})}`, 80, yPosition);
+                        yPosition += 6;
+                    });
+                    yPosition += 5;
+                }
+
+                // Top Customers
+                if (currentData.customers && currentData.customers.length > 0) {
+                    if (yPosition > pageHeight - 80) {
+                        pdf.addPage();
+                        yPosition = 20;
+                    }
+
+                    pdf.setFontSize(12);
+                    pdf.setFont(undefined, 'bold');
+                    pdf.text('Top 10 Customers by Outstanding AR', 15, yPosition);
+                    yPosition += 7;
+
+                    pdf.setFontSize(9);
+                    pdf.setFont(undefined, 'normal');
+                    
+                    const top10 = currentData.customers.slice(0, 10);
+                    top10.forEach((customer, idx) => {
+                        if (yPosition > pageHeight - 15) {
+                            pdf.addPage();
+                            yPosition = 20;
+                        }
+
+                        const customerText = customer.customer.length > 35 ? 
+                            customer.customer.substring(0, 32) + '...' : 
+                            customer.customer;
+                        
+                        pdf.text(`${idx + 1}. ${customerText}`, 20, yPosition);
+                        pdf.text(`${customer.total_outstanding.toLocaleString(undefined, {maximumFractionDigits: 0})}`, 
+                            pageWidth - 40, yPosition, { align: 'right' });
+                        yPosition += 6;
+                    });
+                }
+
+                // Footer on last page
+                const totalPages = pdf.internal.getNumberOfPages();
+                for (let i = 1; i <= totalPages; i++) {
+                    pdf.setPage(i);
+                    pdf.setFontSize(8);
+                    pdf.setTextColor(150);
+                    pdf.text(`Page ${i} of ${totalPages}`, pageWidth / 2, pageHeight - 10, { align: 'center' });
+                }
+
+                // Save PDF
+                pdf.save(`ar_dashboard_${new Date().toISOString().split('T')[0]}.pdf`);
+                showNotification('✓ PDF exported successfully!');
+            } catch (error) {
+                console.error('PDF Export Error:', error);
+                alert('Error generating PDF. Please try again.');
+            } finally {
+                btn.disabled = false;
+                btn.textContent = '📄 Export PDF';
+            }
+        }
+
+        // Initialize dashboard on load
+        window.addEventListener('DOMContentLoaded', () => {
+            loadDashboardData({});
+        });
     </script>
 </body>
 </html>

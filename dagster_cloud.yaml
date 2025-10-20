@@ -1,0 +1,5 @@
+dagster_cloud:
+  workspace:
+    - location_name: heronai_dagster_pipeline
+      code_source:
+        package_name: dagster_pipeline

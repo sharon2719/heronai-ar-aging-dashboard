@@ -180,6 +180,51 @@
         text-transform: uppercase;
         letter-spacing: 0.5px;
         border-bottom: 1px solid var(--border-light);
+        position: relative;
+    }
+
+    /* Sortable column styles */
+    .report-table th.sortable {
+        cursor: pointer;
+        user-select: none;
+        padding-right: 32px;
+        transition: background 0.2s ease;
+    }
+
+    .report-table th.sortable:hover {
+        background: rgba(99, 102, 241, 0.05);
+    }
+
+    .sort-indicator {
+        position: absolute;
+        right: 8px;
+        top: 50%;
+        transform: translateY(-50%);
+        display: flex;
+        flex-direction: column;
+        gap: 1px;
+        opacity: 0.3;
+        transition: opacity 0.2s ease;
+    }
+
+    .sort-indicator svg {
+        width: 10px;
+        height: 10px;
+        fill: currentColor;
+    }
+
+    th.sortable:hover .sort-indicator {
+        opacity: 0.6;
+    }
+
+    th.sort-asc .sort-indicator,
+    th.sort-desc .sort-indicator {
+        opacity: 1;
+    }
+
+    th.sort-asc .sort-indicator .sort-down,
+    th.sort-desc .sort-indicator .sort-up {
+        opacity: 0.2;
     }
 
     .report-table th:first-child {
@@ -309,6 +354,9 @@
         .report-section {
             box-shadow: none;
             page-break-inside: avoid;
+        }
+        .sort-indicator {
+            display: none;
         }
     }
 
@@ -487,23 +535,121 @@
         <div class="section-meta">{{ summaries.count }} customers</div>
     </div>
     {% if summaries %}
-    <table class="report-table">
+    <table class="report-table" id="customerAgingTable">
         <thead>
             <tr>
-                <th>Customer</th>
-                <th style="text-align: right;">Current</th>
-                <th style="text-align: right;">1-30</th>
-                <th style="text-align: right;">31-60</th>
-                <th style="text-align: right;">61-90</th>
-                <th style="text-align: right;">91-120</th>
-                <th style="text-align: right;">120+</th>
-                <th style="text-align: right;">Total</th>
-                <th style="text-align: right;">Overdue %</th>
+                <th class="sortable" data-column="customer" data-type="string">
+                    Customer
+                    <span class="sort-indicator">
+                        <svg class="sort-up" viewBox="0 0 10 10">
+                            <path d="M5 2 L2 5 L8 5 Z"/>
+                        </svg>
+                        <svg class="sort-down" viewBox="0 0 10 10">
+                            <path d="M5 8 L2 5 L8 5 Z"/>
+                        </svg>
+                    </span>
+                </th>
+                <th class="sortable" data-column="current" data-type="number" style="text-align: right;">
+                    Current
+                    <span class="sort-indicator">
+                        <svg class="sort-up" viewBox="0 0 10 10">
+                            <path d="M5 2 L2 5 L8 5 Z"/>
+                        </svg>
+                        <svg class="sort-down" viewBox="0 0 10 10">
+                            <path d="M5 8 L2 5 L8 5 Z"/>
+                        </svg>
+                    </span>
+                </th>
+                <th class="sortable" data-column="days_1_30" data-type="number" style="text-align: right;">
+                    1-30
+                    <span class="sort-indicator">
+                        <svg class="sort-up" viewBox="0 0 10 10">
+                            <path d="M5 2 L2 5 L8 5 Z"/>
+                        </svg>
+                        <svg class="sort-down" viewBox="0 0 10 10">
+                            <path d="M5 8 L2 5 L8 5 Z"/>
+                        </svg>
+                    </span>
+                </th>
+                <th class="sortable" data-column="days_31_60" data-type="number" style="text-align: right;">
+                    31-60
+                    <span class="sort-indicator">
+                        <svg class="sort-up" viewBox="0 0 10 10">
+                            <path d="M5 2 L2 5 L8 5 Z"/>
+                        </svg>
+                        <svg class="sort-down" viewBox="0 0 10 10">
+                            <path d="M5 8 L2 5 L8 5 Z"/>
+                        </svg>
+                    </span>
+                </th>
+                <th class="sortable" data-column="days_61_90" data-type="number" style="text-align: right;">
+                    61-90
+                    <span class="sort-indicator">
+                        <svg class="sort-up" viewBox="0 0 10 10">
+                            <path d="M5 2 L2 5 L8 5 Z"/>
+                        </svg>
+                        <svg class="sort-down" viewBox="0 0 10 10">
+                            <path d="M5 8 L2 5 L8 5 Z"/>
+                        </svg>
+                    </span>
+                </th>
+                <th class="sortable" data-column="days_91_120" data-type="number" style="text-align: right;">
+                    91-120
+                    <span class="sort-indicator">
+                        <svg class="sort-up" viewBox="0 0 10 10">
+                            <path d="M5 2 L2 5 L8 5 Z"/>
+                        </svg>
+                        <svg class="sort-down" viewBox="0 0 10 10">
+                            <path d="M5 8 L2 5 L8 5 Z"/>
+                        </svg>
+                    </span>
+                </th>
+                <th class="sortable" data-column="days_120_plus" data-type="number" style="text-align: right;">
+                    120+
+                    <span class="sort-indicator">
+                        <svg class="sort-up" viewBox="0 0 10 10">
+                            <path d="M5 2 L2 5 L8 5 Z"/>
+                        </svg>
+                        <svg class="sort-down" viewBox="0 0 10 10">
+                            <path d="M5 8 L2 5 L8 5 Z"/>
+                        </svg>
+                    </span>
+                </th>
+                <th class="sortable" data-column="total_outstanding" data-type="number" style="text-align: right;">
+                    Total
+                    <span class="sort-indicator">
+                        <svg class="sort-up" viewBox="0 0 10 10">
+                            <path d="M5 2 L2 5 L8 5 Z"/>
+                        </svg>
+                        <svg class="sort-down" viewBox="0 0 10 10">
+                            <path d="M5 8 L2 5 L8 5 Z"/>
+                        </svg>
+                    </span>
+                </th>
+                <th class="sortable" data-column="overdue_pct" data-type="number" style="text-align: right;">
+                    Overdue %
+                    <span class="sort-indicator">
+                        <svg class="sort-up" viewBox="0 0 10 10">
+                            <path d="M5 2 L2 5 L8 5 Z"/>
+                        </svg>
+                        <svg class="sort-down" viewBox="0 0 10 10">
+                            <path d="M5 8 L2 5 L8 5 Z"/>
+                        </svg>
+                    </span>
+                </th>
             </tr>
         </thead>
-        <tbody>
+        <tbody id="customerTableBody">
             {% for summary in summaries %}
-            <tr>
+            <tr data-customer="{{ summary.customer.name }}"
+                data-current="{{ summary.current }}"
+                data-days_1_30="{{ summary.days_1_30 }}"
+                data-days_31_60="{{ summary.days_31_60 }}"
+                data-days_61_90="{{ summary.days_61_90 }}"
+                data-days_91_120="{{ summary.days_91_120 }}"
+                data-days_120_plus="{{ summary.days_120_plus }}"
+                data-total_outstanding="{{ summary.total_outstanding }}"
+                data-overdue_pct="{% if summary.total_outstanding > 0 %}{% widthratio summary.total_overdue summary.total_outstanding 100 %}{% else %}0{% endif %}">
                 <td><span class="customer-name">{{ summary.customer.name }}</span></td>
                 <td style="text-align: right;" class="amount-cell">${{ summary.current|floatformat:2 }}</td>
                 <td style="text-align: right;" class="amount-cell">${{ summary.days_1_30|floatformat:2 }}</td>
@@ -540,12 +686,151 @@
     <div class="empty-state">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <circle cx="12" cy="12" r="10"/>
-            <line x1="12" y1="8" x2="12" y2="12"/>
-            <line x1="12" y1="16" x2="12.01" y2="16"/>
+            <line x1="15" y1="9" x2="9" y2="15"/>
+            <line x1="9" y1="9" x2="15" y2="15"/>
         </svg>
-        <p>No outstanding receivables found</p>
+        <h3>No Aging Data Available</h3>
+        <p>There are no outstanding receivables to display at this time.</p>
     </div>
     {% endif %}
 </div>
+
+<script>
+(function() {
+    'use strict';
+    
+    const table = document.getElementById('customerAgingTable');
+    if (!table) return; // Exit if table doesn't exist
+    
+    const tbody = document.getElementById('customerTableBody');
+    const headers = table.querySelectorAll('th.sortable');
+    
+    // Store original order
+    const originalOrder = Array.from(tbody.querySelectorAll('tr')).map(row => row.cloneNode(true));
+    
+    // Track current sort state
+    let currentSort = {
+        column: null,
+        direction: null // null, 'asc', or 'desc'
+    };
+    
+    // Parse currency string to number
+    function parseCurrency(value) {
+        if (typeof value === 'number') return value;
+        return parseFloat(value.replace(/[$,]/g, '')) || 0;
+    }
+    
+    // Get comparable value from row
+    function getCellValue(row, column, type) {
+        const value = row.getAttribute('data-' + column);
+        
+        if (type === 'number') {
+            return parseCurrency(value);
+        }
+        
+        // String comparison (case-insensitive)
+        return (value || '').toString().toLowerCase();
+    }
+    
+    // Sort rows
+    function sortTable(column, type) {
+        const rows = Array.from(tbody.querySelectorAll('tr'));
+        
+        // Determine sort direction
+        let direction;
+        if (currentSort.column === column) {
+            if (currentSort.direction === null) {
+                direction = 'asc';
+            } else if (currentSort.direction === 'asc') {
+                direction = 'desc';
+            } else {
+                direction = null; // Reset to original
+            }
+        } else {
+            direction = 'asc';
+        }
+        
+        // Update sort state
+        currentSort.column = column;
+        currentSort.direction = direction;
+        
+        // Update header indicators
+        updateHeaderIndicators();
+        
+        // If resetting, restore original order
+        if (direction === null) {
+            tbody.innerHTML = '';
+            originalOrder.forEach(row => {
+                tbody.appendChild(row.cloneNode(true));
+            });
+            return;
+        }
+        
+        // Sort the rows
+        rows.sort((a, b) => {
+            const aValue = getCellValue(a, column, type);
+            const bValue = getCellValue(b, column, type);
+            
+            let comparison = 0;
+            if (aValue < bValue) comparison = -1;
+            if (aValue > bValue) comparison = 1;
+            
+            return direction === 'asc' ? comparison : -comparison;
+        });
+        
+        // Clear and re-append sorted rows
+        tbody.innerHTML = '';
+        rows.forEach(row => tbody.appendChild(row));
+    }
+    
+    // Update sort indicators on headers
+    function updateHeaderIndicators() {
+        headers.forEach(header => {
+            const column = header.getAttribute('data-column');
+            
+            // Remove all sort classes
+            header.classList.remove('sort-asc', 'sort-desc');
+            
+            // Add appropriate class if this is the sorted column
+            if (column === currentSort.column) {
+                if (currentSort.direction === 'asc') {
+                    header.classList.add('sort-asc');
+                } else if (currentSort.direction === 'desc') {
+                    header.classList.add('sort-desc');
+                }
+            }
+        });
+    }
+    
+    // Add click handlers to sortable headers
+    headers.forEach(header => {
+        header.addEventListener('click', function() {
+            const column = this.getAttribute('data-column');
+            const type = this.getAttribute('data-type') || 'string';
+            sortTable(column, type);
+        });
+        
+        // Make it keyboard accessible
+        header.setAttribute('tabindex', '0');
+        header.setAttribute('role', 'button');
+        header.setAttribute('aria-label', 'Sort by ' + this.textContent.trim());
+        
+        header.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                const column = this.getAttribute('data-column');
+                const type = this.getAttribute('data-type') || 'string';
+                sortTable(column, type);
+            }
+        });
+    });
+    
+    // Optional: Default sort by total outstanding (descending)
+    // Uncomment the next two lines if you want the table sorted by default
+    // sortTable('total_outstanding', 'number');
+    // sortTable('total_outstanding', 'number'); // Call twice for descending
+    
+})();
+</script>
 
 {% endblock %}

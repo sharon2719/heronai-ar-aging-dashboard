@@ -3,7 +3,7 @@ Dagster Definitions for HeronAI AR Dashboard
 Combines all assets, jobs, and schedules
 """
 from dagster import Definitions, load_assets_from_modules
-import dagster_pipeline.assets as assets_module  # ✅ FIXED import
+import dagster_pipeline.assets as assets_module 
 
 # Load all assets
 all_assets = load_assets_from_modules([assets_module])

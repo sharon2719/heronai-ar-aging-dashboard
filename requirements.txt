@@ -1,5 +1,6 @@
 # Core Dagster - ALL must be same version
 dagster==1.9.6
+dagster-cloud==1.9.6
 dagster-graphql==1.9.6
 dagster-pipes==1.9.6
 dagster-postgres==0.25.6

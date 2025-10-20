@@ -1,5 +1,6 @@
-organization: heronai-dashboard
-deployment: prod
+organization: heronai
+branch_deployments:
+  main: prod
 
 locations:
   - location_name: heronai_ar_dashboard

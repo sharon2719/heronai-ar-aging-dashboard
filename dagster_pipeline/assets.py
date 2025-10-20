@@ -442,7 +442,7 @@ def load_transactions(context: AssetExecutionContext, transformed_transactions: 
     )
 
 
-@asset(group_name="load", deps=[load_invoices, transformed_invoices])
+@asset(group_name="load", deps=[load_invoices])
 def load_ar_aging_summary(context: AssetExecutionContext, transformed_invoices: pd.DataFrame) -> Output[int]:
     """Calculate and load AR aging summary by customer"""
     try:

@@ -1,7 +1,0 @@
-dagster
-dagit
-
-[dev]
-pytest
-black
-ruff

@@ -1,9 +1,8 @@
-organization: heronai-dashboard
-
-branch_deployments:
-  main: prod
-
 locations:
   - location_name: heronai_ar_dashboard
     code_source:
       package_name: dagster_pipeline
+    build:
+      python_version: "3.10"
+      requirements_path: "requirements.txt"
+    working_directory: .

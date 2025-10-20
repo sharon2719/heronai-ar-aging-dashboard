@@ -1,8 +1,9 @@
 locations:
   - location_name: heronai_ar_dashboard
     code_source:
-      package_name: dagster_pipeline
+      python_file: dagster_pipeline/definitions.py
+      attribute: defs
     build:
+      directory: .
       python_version: "3.10"
-      requirements_path: "requirements.txt"
-    working_directory: .
+      requirements_txt: requirements.txt

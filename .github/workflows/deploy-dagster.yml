@@ -14,8 +14,8 @@ jobs:
 
       - name: Deploy to Dagster Cloud
         uses: dagster-io/dagster-cloud-action/actions/build_deploy_python_executable@v0.1
-        env:
-          DAGSTER_CLOUD_API_TOKEN: ${{ secrets.DAGSTER_CLOUD_API_TOKEN }}
         with:
           dagster_cloud_file: dagster_cloud.yaml
-          deployment: "prod"
+          deployment: prod
+        env:
+          DAGSTER_CLOUD_API_TOKEN: ${{ secrets.DAGSTER_CLOUD_API_TOKEN }}

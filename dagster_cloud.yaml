@@ -1,7 +1,6 @@
 locations:
   - location_name: heronai_ar_dashboard
     code_source:
-      python_file: dagster_pipeline/definitions.py
-      attribute: defs
+      package_name: dagster_pipeline
     build:
       directory: .

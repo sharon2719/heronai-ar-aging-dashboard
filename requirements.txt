@@ -35,7 +35,7 @@ python-dotenv==1.0.1
 requests==2.32.3
 PyYAML==6.0.2
 click==8.1.7
-coloredlogs==15.0.1
+coloredlogs==14.0
 rich==13.9.2
 backoff==2.2.1
 

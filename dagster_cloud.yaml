@@ -1,5 +1,7 @@
-dagster_cloud:
-  workspace:
-    - location_name: heronai_dagster_pipeline
-      code_source:
-        package_name: dagster_pipeline
+organization: heronai-dashboard
+deployment: prod
+
+locations:
+  - location_name: heronai_ar_dashboard
+    code_source:
+      package_name: dagster_pipeline

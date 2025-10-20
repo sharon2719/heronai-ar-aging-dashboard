@@ -295,7 +295,7 @@ def transformed_transactions(context: AssetExecutionContext, raw_transactions: L
 # LOAD ASSETS - Write to PostgreSQL via Django ORM
 # ==============================================================================
 
-@asset(group_name="load", deps=[transformed_customers])
+@asset(group_name="load")
 def load_customers(context: AssetExecutionContext, transformed_customers: pd.DataFrame) -> Output[int]:
     """Load transformed customer data into Django model"""
     created_count = 0
@@ -331,7 +331,7 @@ def load_customers(context: AssetExecutionContext, transformed_customers: pd.Dat
     )
 
 
-@asset(group_name="load", deps=[transformed_invoices, load_customers])
+@asset(group_name="load", deps=[load_customers])
 def load_invoices(context: AssetExecutionContext, transformed_invoices: pd.DataFrame) -> Output[int]:
     """Load transformed invoice data into Django model and link to customers"""
     created_count = 0
@@ -393,7 +393,7 @@ def load_invoices(context: AssetExecutionContext, transformed_invoices: pd.DataF
     )
 
 
-@asset(group_name="load", deps=[transformed_transactions, load_customers])
+@asset(group_name="load", deps=[load_customers])
 def load_transactions(context: AssetExecutionContext, transformed_transactions: pd.DataFrame) -> Output[int]:
     """Load transformed transaction data into Django model and link to customers"""
     created_count = 0

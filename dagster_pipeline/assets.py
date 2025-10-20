@@ -88,7 +88,7 @@ def raw_transactions(context: AssetExecutionContext) -> List[dict]:
 # TRANSFORM ASSETS - Clean and structure data
 # ==============================================================================
 
-@asset(group_name="transform", deps=[raw_customers])
+@asset(group_name="transform")
 def transformed_customers(context: AssetExecutionContext, raw_customers: List[dict]) -> pd.DataFrame:
     """Transform customer data into structured format"""
     customers = []
@@ -135,7 +135,7 @@ def transformed_customers(context: AssetExecutionContext, raw_customers: List[di
 
 
 
-@asset(group_name="transform", deps=[raw_invoices])
+@asset(group_name="transform")
 def transformed_invoices(context: AssetExecutionContext, raw_invoices: List[dict]) -> pd.DataFrame:
     """Transform invoice data with aging calculations"""
     invoices = []
@@ -232,7 +232,7 @@ def transformed_invoices(context: AssetExecutionContext, raw_invoices: List[dict
     return df
 
 
-@asset(group_name="transform", deps=[raw_transactions])
+@asset(group_name="transform")
 def transformed_transactions(context: AssetExecutionContext, raw_transactions: List[dict]) -> pd.DataFrame:
     """Transform transaction/payment data"""
     transactions = []

@@ -1,9 +1,0 @@
-[32m2025-10-20 20:23:03 +0000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 26806bce-bf2e-4f16-9fc0-2ce8a633a43b - 763588 - LOGS_CAPTURED - Started capturing logs in process (pid: 763588).
-[32m2025-10-20 20:23:03 +0000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 26806bce-bf2e-4f16-9fc0-2ce8a633a43b - 763588 - raw_customers - STEP_START - Started execution of step "raw_customers".
-[32m2025-10-20 20:23:03 +0000[0m - dagster - [34mINFO[0m - __ASSET_JOB - 26806bce-bf2e-4f16-9fc0-2ce8a633a43b - raw_customers - Reading customers from /home/sharon/Documents/heronai-ar-dashboard/data/customers.json
-[32m2025-10-20 20:23:03 +0000[0m - dagster - [34mINFO[0m - __ASSET_JOB - 26806bce-bf2e-4f16-9fc0-2ce8a633a43b - raw_customers - ✓ Extracted 51 customers
-[32m2025-10-20 20:23:03 +0000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 26806bce-bf2e-4f16-9fc0-2ce8a633a43b - 763588 - raw_customers - STEP_OUTPUT - Yielded output "result" of type "[dict]". (Type check passed).
-[32m2025-10-20 20:23:03 +0000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 26806bce-bf2e-4f16-9fc0-2ce8a633a43b - raw_customers - Writing file at: /home/sharon/Documents/heronai-ar-dashboard/.tmp_dagster_home_smikaad7/storage/raw_customers using PickledObjectFilesystemIOManager...
-[32m2025-10-20 20:23:04 +0000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 26806bce-bf2e-4f16-9fc0-2ce8a633a43b - 763588 - raw_customers - ASSET_MATERIALIZATION - Materialized value raw_customers.
-[32m2025-10-20 20:23:04 +0000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 26806bce-bf2e-4f16-9fc0-2ce8a633a43b - 763588 - raw_customers - HANDLED_OUTPUT - Handled output "result" using IO manager "io_manager"
-[32m2025-10-20 20:23:04 +0000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 26806bce-bf2e-4f16-9fc0-2ce8a633a43b - 763588 - raw_customers - STEP_SUCCESS - Finished execution of step "raw_customers" in 211ms.

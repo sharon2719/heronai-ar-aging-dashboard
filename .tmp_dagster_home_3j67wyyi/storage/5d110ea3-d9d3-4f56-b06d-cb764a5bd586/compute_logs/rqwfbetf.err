@@ -1,9 +1,0 @@
-[32m2025-10-21 12:20:33 +0000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 5d110ea3-d9d3-4f56-b06d-cb764a5bd586 - 13636 - LOGS_CAPTURED - Started capturing logs in process (pid: 13636).
-[32m2025-10-21 12:20:33 +0000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 5d110ea3-d9d3-4f56-b06d-cb764a5bd586 - 13636 - raw_invoices - STEP_START - Started execution of step "raw_invoices".
-[32m2025-10-21 12:20:33 +0000[0m - dagster - [34mINFO[0m - __ASSET_JOB - 5d110ea3-d9d3-4f56-b06d-cb764a5bd586 - raw_invoices - Reading invoices from /home/sharon/Documents/heronai-ar-dashboard/data/customer_invoices.json
-[32m2025-10-21 12:20:33 +0000[0m - dagster - [34mINFO[0m - __ASSET_JOB - 5d110ea3-d9d3-4f56-b06d-cb764a5bd586 - raw_invoices - ✓ Extracted 67 invoices
-[32m2025-10-21 12:20:33 +0000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 5d110ea3-d9d3-4f56-b06d-cb764a5bd586 - 13636 - raw_invoices - STEP_OUTPUT - Yielded output "result" of type "[dict]". (Type check passed).
-[32m2025-10-21 12:20:33 +0000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 5d110ea3-d9d3-4f56-b06d-cb764a5bd586 - raw_invoices - Writing file at: /home/sharon/Documents/heronai-ar-dashboard/dagster_storage/raw_invoices using PickledObjectFilesystemIOManager...
-[32m2025-10-21 12:20:33 +0000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 5d110ea3-d9d3-4f56-b06d-cb764a5bd586 - 13636 - raw_invoices - ASSET_MATERIALIZATION - Materialized value raw_invoices.
-[32m2025-10-21 12:20:33 +0000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 5d110ea3-d9d3-4f56-b06d-cb764a5bd586 - 13636 - raw_invoices - HANDLED_OUTPUT - Handled output "result" using IO manager "io_manager"
-[32m2025-10-21 12:20:33 +0000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 5d110ea3-d9d3-4f56-b06d-cb764a5bd586 - 13636 - raw_invoices - STEP_SUCCESS - Finished execution of step "raw_invoices" in 217ms.

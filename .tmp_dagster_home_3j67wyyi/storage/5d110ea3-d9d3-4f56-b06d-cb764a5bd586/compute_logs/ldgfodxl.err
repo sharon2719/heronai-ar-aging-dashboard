@@ -1,9 +1,0 @@
-[32m2025-10-21 12:20:32 +0000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 5d110ea3-d9d3-4f56-b06d-cb764a5bd586 - 13637 - LOGS_CAPTURED - Started capturing logs in process (pid: 13637).
-[32m2025-10-21 12:20:32 +0000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 5d110ea3-d9d3-4f56-b06d-cb764a5bd586 - 13637 - raw_transactions - STEP_START - Started execution of step "raw_transactions".
-[32m2025-10-21 12:20:32 +0000[0m - dagster - [34mINFO[0m - __ASSET_JOB - 5d110ea3-d9d3-4f56-b06d-cb764a5bd586 - raw_transactions - Reading transactions from /home/sharon/Documents/heronai-ar-dashboard/data/all_transactions.json
-[32m2025-10-21 12:20:33 +0000[0m - dagster - [34mINFO[0m - __ASSET_JOB - 5d110ea3-d9d3-4f56-b06d-cb764a5bd586 - raw_transactions - ✓ Extracted 341 transactions
-[32m2025-10-21 12:20:33 +0000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 5d110ea3-d9d3-4f56-b06d-cb764a5bd586 - 13637 - raw_transactions - STEP_OUTPUT - Yielded output "result" of type "[dict]". (Type check passed).
-[32m2025-10-21 12:20:33 +0000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 5d110ea3-d9d3-4f56-b06d-cb764a5bd586 - raw_transactions - Writing file at: /home/sharon/Documents/heronai-ar-dashboard/dagster_storage/raw_transactions using PickledObjectFilesystemIOManager...
-[32m2025-10-21 12:20:33 +0000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 5d110ea3-d9d3-4f56-b06d-cb764a5bd586 - 13637 - raw_transactions - ASSET_MATERIALIZATION - Materialized value raw_transactions.
-[32m2025-10-21 12:20:33 +0000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 5d110ea3-d9d3-4f56-b06d-cb764a5bd586 - 13637 - raw_transactions - HANDLED_OUTPUT - Handled output "result" using IO manager "io_manager"
-[32m2025-10-21 12:20:33 +0000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 5d110ea3-d9d3-4f56-b06d-cb764a5bd586 - 13637 - raw_transactions - STEP_SUCCESS - Finished execution of step "raw_transactions" in 237ms.

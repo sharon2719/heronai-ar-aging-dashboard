@@ -1,0 +1,9 @@
+[32m2025-10-21 12:21:37 +0000[0m - dagster - [34mDEBUG[0m - full_ar_etl_pipeline - 96530032-3e41-4f1a-8287-6e77de3b1a72 - 16183 - LOGS_CAPTURED - Started capturing logs in process (pid: 16183).
+[32m2025-10-21 12:21:37 +0000[0m - dagster - [34mDEBUG[0m - full_ar_etl_pipeline - 96530032-3e41-4f1a-8287-6e77de3b1a72 - 16183 - raw_invoices - STEP_START - Started execution of step "raw_invoices".
+[32m2025-10-21 12:21:37 +0000[0m - dagster - [34mINFO[0m - full_ar_etl_pipeline - 96530032-3e41-4f1a-8287-6e77de3b1a72 - raw_invoices - Reading invoices from /home/sharon/Documents/heronai-ar-dashboard/data/customer_invoices.json
+[32m2025-10-21 12:21:37 +0000[0m - dagster - [34mINFO[0m - full_ar_etl_pipeline - 96530032-3e41-4f1a-8287-6e77de3b1a72 - raw_invoices - ✓ Extracted 67 invoices
+[32m2025-10-21 12:21:37 +0000[0m - dagster - [34mDEBUG[0m - full_ar_etl_pipeline - 96530032-3e41-4f1a-8287-6e77de3b1a72 - 16183 - raw_invoices - STEP_OUTPUT - Yielded output "result" of type "[dict]". (Type check passed).
+[32m2025-10-21 12:21:37 +0000[0m - dagster - [34mDEBUG[0m - full_ar_etl_pipeline - 96530032-3e41-4f1a-8287-6e77de3b1a72 - raw_invoices - Writing file at: /home/sharon/Documents/heronai-ar-dashboard/dagster_storage/raw_invoices using PickledObjectFilesystemIOManager...
+[32m2025-10-21 12:21:37 +0000[0m - dagster - [34mDEBUG[0m - full_ar_etl_pipeline - 96530032-3e41-4f1a-8287-6e77de3b1a72 - 16183 - raw_invoices - ASSET_MATERIALIZATION - Materialized value raw_invoices.
+[32m2025-10-21 12:21:37 +0000[0m - dagster - [34mDEBUG[0m - full_ar_etl_pipeline - 96530032-3e41-4f1a-8287-6e77de3b1a72 - 16183 - raw_invoices - HANDLED_OUTPUT - Handled output "result" using IO manager "io_manager"
+[32m2025-10-21 12:21:37 +0000[0m - dagster - [34mDEBUG[0m - full_ar_etl_pipeline - 96530032-3e41-4f1a-8287-6e77de3b1a72 - 16183 - raw_invoices - STEP_SUCCESS - Finished execution of step "raw_invoices" in 337ms.
